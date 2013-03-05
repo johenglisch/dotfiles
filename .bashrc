@@ -15,6 +15,8 @@ unset pclr
 # colours
 alias ls='ls -h --color=auto'
 alias grep='grep --color=auto'
+alias pacman='pacman-color'
+alias packer='packer-color'
 
 # aliases
 alias la='ls -AlF'
