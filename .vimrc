@@ -10,7 +10,7 @@ set showmatch
 set ignorecase
 set smartcase
 set incsearch
-set nohlsearch
+set hlsearch
 
 " input settings
 set showcmd
@@ -39,7 +39,8 @@ endfor
 
 " following options only apply to gvim
 if has("gui_running")
-    colorscheme tango
+    set background=dark
+    colorscheme moria
     set guioptions-=T
     set guifont=Terminus\ 10
     set mousehide
