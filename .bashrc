@@ -19,6 +19,7 @@ alias pacman='pacman-color'
 alias packer='packer-color'
 
 # aliases
+alias ..='cd ..'
 alias la='ls -AlF'
 alias huhu='echo -e "\a"'
 alias mkdir='mkdir -p'
