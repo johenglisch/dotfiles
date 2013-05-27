@@ -1,0 +1,29 @@
+! XTerm settings
+XTerm*foreground: grey
+XTerm*background: black
+XTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-*
+XTerm*boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
+
+! UXTerm settings
+UXTerm*foreground: grey
+UXTerm*background: black
+UXTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-*
+UXTerm*boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
+
+! URxvt basic settings
+URxvt.buffered: true
+URxvt.scrollBar: false
+URxvt.externalBorder: 0
+URxvt.borderLess: false
+URxvt.foreground: grey
+URxvt.background: black
+URxvt.urgentOnBell: true
+
+! URxvt fonts
+URxvt.font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-*
+URxvt.boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
+
+
+! URxvt transparency
+URxvt.transparent: true
+URxvt.shading: 20
