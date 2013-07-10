@@ -51,7 +51,7 @@ if has("gui_running")
     colorscheme wombat256mod
     set guioptions-=T
     set guioptions+=c
-    set guifont=Terminus\ 10
+    set guifont=Terminus\ 12
     set mousehide
 endif
 
@@ -59,8 +59,10 @@ endif
 exe pathogen#infect()
 exe pathogen#helptags()
 
-" Remap Q to 'reformat paragraph' to avoid ex mode
-nmap Q gqap
+" Remap Q to 'reformat' to avoid ex mode
+nmap Q gq
+vmap Q gq
+nmap ZW :w!<CR>
 
 " Set indentation and syntax highlighting
 set autoindent
