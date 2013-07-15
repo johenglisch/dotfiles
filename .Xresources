@@ -22,8 +22,3 @@ URxvt.urgentOnBell: true
 ! URxvt fonts
 URxvt.font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-*
 URxvt.boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
-
-
-! URxvt transparency
-URxvt.transparent: true
-URxvt.shading: 20
