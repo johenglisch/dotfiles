@@ -10,8 +10,10 @@ setlocal norelativenumber
 " use C-n for cycling through label keywords
 set iskeyword+=:
 
-" disable auto folding
-let g:Tex_AutoFolding = 0
+" folding
+"let g:Tex_AutoFolding = 0
+let g:Tex_FoldedEnvironments="abstract,titlepage"
+let g:Tex_FoldedMisc="preamble,<<<"
 
 " disable auto completion of quotation marks
 let g:Tex_SmartKeyQuote = 0
