@@ -1,6 +1,7 @@
+# enable completion
 autoload -U compinit && compinit
 
-# Colourisation
+# enable colours
 autoload -U colors && colors
 alias ls='ls -h --color=auto'
 alias grep='grep --color=auto'
@@ -18,12 +19,12 @@ man() {
 # Set prompt
 promptclr="green"
 [ "$UID" -eq "0" ] && promptclr='red'
-PROMPT="%{%B%F{$promptclr}%}%1~%#%{%f%b%} "
+PROMPT="%{%F{$promptclr}%}%1~%#%{%f%} "
 unset $promptclr
 autoload -U promptinit && promptinit
 
 
-# Key bindings
+# key bindings
 bindkey -v
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
@@ -32,14 +33,14 @@ bindkey -M vicmd '\e[B' history-search-forward
 bindkey -M vicmd k history-search-backward
 bindkey -M vicmd j history-search-forward
 
-# History settings
+# history settings
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory
 
 
-# Aliases
+# aliases
 alias ..='cd ..'
 alias la='ls -AlF'
 alias huhu='echo -e "\a"'
