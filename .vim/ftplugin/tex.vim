@@ -3,6 +3,7 @@ setlocal tabstop=2
 setlocal shiftwidth=2
 setlocal softtabstop=2
 setlocal smarttab
+set linebreak
 
 " improve speed
 setlocal norelativenumber
