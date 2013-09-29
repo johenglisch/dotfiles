@@ -1,2 +1,3 @@
-setlocal noautoindent
-setlocal nosmartindent
+set linebreak
+set noautoindent
+set nosmartindent
