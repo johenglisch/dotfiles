@@ -33,8 +33,8 @@ let g:Tex_FormatDependency_pdf = "dvi,ps,pdf"
 let g:Tex_CompileRule_dvi = "/usr/bin/latex --interaction=nonstopmode $*"
 let g:Tex_CompileRule_ps = "/usr/bin/dvips -o $*.ps $*.dvi -Ppdf"
 let g:Tex_CompileRule_pdf = "/usr/bin/ps2pdf $*.ps"
-let g:Tex_ViewRule_dvi = "/usr/bin/okular $*.dvi 2>/dev/null"
-let g:Tex_ViewRule_pdf = "/usr/bin/okular $*.pdf 2>/dev/null"
+let g:Tex_ViewRule_dvi = "/usr/bin/evince $*.dvi 2>/dev/null"
+let g:Tex_ViewRule_pdf = "/usr/bin/evince $*.pdf 2>/dev/null"
 
 " ignore some warnings
 let g:Tex_IgnoredWarnings =
