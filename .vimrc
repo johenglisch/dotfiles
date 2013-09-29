@@ -80,13 +80,6 @@ if has("gui_running")
     set mousehide
 endif
 
-" set colour of the 80 char mark depending on bg
-if &background ==# 'light'
-    highlight ColorColumn ctermbg=LightBlue guibg=LightGrey
-else
-    highlight ColorColumn ctermbg=DarkBlue guibg=#1A1A1A
-endif
-
 " set a mark at the 80 chars border in insert mode
 augroup ColorcolumnOnlyInInsertMode
     autocmd!
@@ -113,6 +106,13 @@ set autoindent
 set smartindent
 filetype plugin indent on
 syntax on
+
+" set colour of the 80 char mark depending on bg
+if &background ==# 'light'
+    highlight ColorColumn ctermbg=LightBlue guibg=LightGrey
+else
+    highlight ColorColumn ctermbg=DarkBlue guibg=#1A1A1A
+endif
 " }}}
 
 " vim:foldmethod=marker:nofoldenable:
