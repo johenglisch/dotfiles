@@ -7,6 +7,7 @@ XTerm*boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
 ! UXTerm settings
 UXTerm*foreground: grey
 UXTerm*background: black
+!UXTerm*bellIsUrgent: true
 UXTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-*
 UXTerm*boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
 
@@ -17,7 +18,7 @@ URxvt.externalBorder: 0
 URxvt.borderLess: false
 URxvt.foreground: grey
 URxvt.background: black
-URxvt.urgentOnBell: true
+!URxvt.urgentOnBell: true
 
 ! URxvt fonts
 URxvt*font: -*-terminus-medium-r-normal-*-14-*-*-*-*-*-iso10646-*
