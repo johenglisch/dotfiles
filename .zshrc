@@ -16,13 +16,15 @@ man() {
         man "$@"
 }
 
-# Set prompt
+# prompt
 promptclr="green"
 [ "$UID" -eq "0" ] && promptclr='red'
-PROMPT="%{%F{$promptclr}%}%1~%#%{%f%} "
+prompt="%{%F{$promptclr}%}%1~%#%{%f%} "
 unset $promptclr
 autoload -U promptinit && promptinit
 
+# variables
+EDITOR="/usr/bin/vim -p"
 
 # key bindings
 bindkey -v
@@ -38,7 +40,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory
-
 
 # aliases
 alias ..='cd ..'
