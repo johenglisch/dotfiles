@@ -1,9 +1,3 @@
-! XTerm settings
-XTerm*foreground: grey
-XTerm*background: black
-XTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-*
-XTerm*boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
-
 ! UXTerm settings
 UXTerm*foreground: grey
 UXTerm*background: black
