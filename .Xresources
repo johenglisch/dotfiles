@@ -8,8 +8,8 @@ XTerm*boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
 UXTerm*foreground: grey
 UXTerm*background: black
 !UXTerm*bellIsUrgent: true
-UXTerm*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-*
-UXTerm*boldfont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-*
+UXTerm*font: -*-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-*
+UXTerm*boldfont: -*-fixed-bold-r-normal-*-14-*-*-*-*-*-iso10646-*
 
 ! URxvt basic settings
 URxvt.buffered: true
