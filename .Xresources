@@ -9,7 +9,7 @@ Xft.rgba: rgb
 ! UXTerm settings
 UXTerm*foreground: grey
 UXTerm*background: black
-!UXTerm*bellIsUrgent: true
+! UXTerm*bellIsUrgent: true
 UXTerm*font: -*-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-*
 UXTerm*boldfont: -*-fixed-bold-r-normal-*-14-*-*-*-*-*-iso10646-*
 
@@ -20,9 +20,10 @@ URxvt.externalBorder: 0
 URxvt.borderLess: false
 URxvt.foreground: grey
 URxvt.background: black
-!URxvt.urgentOnBell: true
+URxvt.secondaryWheel: true
+URxvt.urgentOnBell: true
 
 ! URxvt fonts
-URxvt*font: -*-terminus-medium-r-normal-*-14-*-*-*-*-*-iso10646-*
-URxvt*boldFont: -*-terminus-bold-r-normal-*-14-*-*-*-*-*-iso10646-*
-URxvt*italicFont: -*-terminus-medium-o-normal-*-14-*-*-*-*-*-iso10646-*
+URxvt*font: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*
+URxvt*boldFont: -*-terminus-bold-r-normal-*-16-*-*-*-*-*-iso10646-*
+URxvt*italicFont: -*-terminus-medium-o-normal-*-16-*-*-*-*-*-iso10646-*
