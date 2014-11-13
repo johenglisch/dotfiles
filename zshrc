@@ -52,6 +52,8 @@ alias mkdir='mkdir -p'
 alias ed='ed -p"*"'
 alias emacs='emacs -nw'
 
+alias wpa_wifi='wpa_supplicant -BDwext -iwifi -c'
+
 # xinit shortcut
 xinit() {
     /usr/bin/xinit $* -- :1 -nolisten tcp vt$XDG_VTNR
