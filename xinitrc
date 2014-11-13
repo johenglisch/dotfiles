@@ -16,7 +16,7 @@ xsetroot -solid black -cursor_name left_ptr
 # load .Xresources settings
 xrdb -merge .Xresources
 # disable annoying bell
-xset -b off
+xset b off
 # set screen to standby->suspend->off after 3x300 seconds
 xset dpms 300 600 900
 
