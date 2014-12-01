@@ -49,7 +49,7 @@ alias la='ls -A'
 alias ll='ls -AlF'
 alias huhu='echo -e "\a"'
 alias mkdir='mkdir -p'
-alias ed='ed -p"*"'
+# alias ed='ed -p"*"'
 alias emacs='emacs -nw'
 
 alias wpa_wifi='wpa_supplicant -BDwext -iwifi -c'
