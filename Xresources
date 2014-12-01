@@ -7,11 +7,11 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! UXTerm settings
-UXTerm*foreground: grey
-UXTerm*background: black
+UXTerm*foreground: black
+UXTerm*background: LightYellow2
 ! UXTerm*bellIsUrgent: true
-UXTerm*font: -*-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-*
-UXTerm*boldfont: -*-fixed-bold-r-normal-*-14-*-*-*-*-*-iso10646-*
+UXTerm*font: -*-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-*
+UXTerm*boldfont: -*-fixed-bold-r-normal-*-15-*-*-*-*-*-iso10646-*
 
 ! URxvt basic settings
 URxvt.buffered: true
@@ -26,4 +26,4 @@ URxvt.urgentOnBell: true
 ! URxvt fonts
 URxvt*font: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*
 URxvt*boldFont: -*-terminus-bold-r-normal-*-16-*-*-*-*-*-iso10646-*
-URxvt*italicFont: -*-terminus-medium-o-normal-*-16-*-*-*-*-*-iso10646-*
+URxvt*italicFont: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*
