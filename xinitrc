@@ -49,11 +49,11 @@ case $gui in
         background_stuff
         exec i3
         ;;
-    xfce)
-        exec startxfce4
-        ;;
     kde)
         exec startkde
+        ;;
+    xfce)
+        exec startxfce4
         ;;
     xmonad)
         background_stuff
