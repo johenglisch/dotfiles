@@ -21,8 +21,8 @@ xset b off
 xset dpms 300 600 900
 
 # daemons
-mpd
-urxvtd -q -o -f
+[ -z "$(pidof mpd)" ] && mpd
+[ -z "$(pidof urxvtd)" ] && urxvtd -q -o -f
 
 background_stuff() {
     # power management
