@@ -45,6 +45,9 @@ case $gui in
         volumeicon &
         exec startfluxbox
         ;;
+    gnome)
+        exec gnome-session
+        ;;
     i3)
         background_stuff
         exec i3
