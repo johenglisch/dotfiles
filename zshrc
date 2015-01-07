@@ -20,7 +20,8 @@ man() {
 # prompt
 promptclr='green'
 [ $UID -eq 0 ] && promptclr='red'
-prompt="%{%F{$promptclr}%}%1~%#%{%f%} "
+# note: prompt contains literal ^G to trigger an urgency hint
+prompt="%{%F{$promptclr}%}%1~%#%{%f%} "
 unset $promptclr
 autoload -U promptinit && promptinit
 
