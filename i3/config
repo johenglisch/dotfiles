@@ -127,6 +127,7 @@ for_window [class="XTerm"]          border 1pixel
 for_window [class="UXTerm"]         border 1pixel
 for_window [class="Emacs"]          border 1pixel
 for_window [class="Vim"]            border 1pixel
+for_window [class="Gvim"]           border 1pixel
 for_window [class="Dwarf_Fortress"] border 1pixel
 for_window [class="Minecraft.*"]    border 1pixel
 
