@@ -16,4 +16,4 @@ complete -cf killall
 stty stop undef
 stty start undef
 
-source .aliases
+source ~/.aliases
