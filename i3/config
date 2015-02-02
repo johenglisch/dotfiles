@@ -16,20 +16,17 @@ bindsym $mod+Shift+q exit
 ## Actions on Windows and Containers ##
 
 bindsym $mod+Shift+c kill
+bindsym $mod+Shift+f fullscreen
 
-bindsym $mod+Shift+v split h
-bindsym $mod+v       split v
 bindsym $mod+a       focus parent
 bindsym $mod+Shift+a focus child
-bindsym $mod+u       [urgent="latest"] focus
-
-bindsym $mod+space       focus mode_toggle
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+Shift+f     fullscreen
+bindsym $mod+e       layout toggle split
+bindsym $mod+Shift+e split v
 
 bindsym $mod+z       move scratchpad
 bindsym $mod+Shift+z scratchpad show
 
+bindsym $mod+u       [urgent="latest"] focus
 bindsym $mod+h       focus left
 bindsym $mod+j       focus down
 bindsym $mod+k       focus up
@@ -39,12 +36,11 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-
-## Layout ##
-
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+
+bindsym $mod+space       focus mode_toggle
+bindsym $mod+Shift+space floating toggle
 
 
 ## Workspaces ##
@@ -87,6 +83,18 @@ bindsym $mod+Shift+minus move container to workspace 10:media
 workspace 10:media output HDMI2
 bindsym $mod+x move container to output right
 bindsym $mod+Shift+x move workspace to output right
+
+
+## Editor Settings ##
+
+bindsym $mod+v workspace vi
+bindsym $mod+Shift+v exec gvim
+assign [class="Vim"]   → vi
+assign [class="Gvim"]  → vi
+
+bindsym $mod+g workspace emacs
+bindsym $mod+Shift+g exec emacs
+assign [class="Emacs"] → emacs
 
 
 ## Workspace Assignments ##
@@ -153,10 +161,10 @@ bindsym $mod+Shift+w      exec $term -fg 'black' -bg 'white' -fn '-*-terminus-bo
 bindsym $mod+Shift+Return exec $term -name notes
 bindsym $mod+Shift+p      exec $term -fg 'grey' -bg 'black' -name music -e ncmpcpp
 
-bindsym $mod+b          exec firefox
-bindsym $mod+f          exec pcmanfm
 bindsym $mod+p          exec dmenu_run
+bindsym $mod+b          exec firefox
 bindsym $mod+i          exec thunderbird
+bindsym $mod+f          exec pcmanfm
 bindsym XF86ScreenSaver exec slock
 
 bindsym XF86AudioPlay        exec mpc toggle
