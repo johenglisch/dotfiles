@@ -1,7 +1,11 @@
-promptclr='green'
-[ $UID -eq 0 ] && promptclr='red'
-prompt="%{%F{$promptclr}%}%1~%#%{%f%} "
-unset $promptclr
+if [ "$TERM" = 'dumb' ]; then
+    prompt="%1~%# "
+else
+    promptclr='green'
+    [ $UID -eq 0 ] && promptclr='red'
+    prompt="%{%F{$promptclr}%}%1~%#%{%f%} "
+    unset $promptclr
+fi
 
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit

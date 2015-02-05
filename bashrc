@@ -2,10 +2,14 @@
 
 [[ $- != *i* ]] && return
 
-pclr='01;32'
-[ $UID -eq 0 ] && pclr='01;31'
-PS1="\[\e[${pclr}m\]\W\$\[\e[00m\] "
-unset pclr
+if [ "$TERM" = 'dumb' ]; then
+    PS1="\W\$ "
+else
+    pclr='01;32'
+    [ $UID -eq 0 ] && pclr='01;31'
+    PS1="\[\e[${pclr}m\]\W\$\[\e[00m\] "
+    unset pclr
+fi
 
 set -o vi
 
