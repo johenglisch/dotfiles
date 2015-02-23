@@ -11,8 +11,6 @@ else
     unset pclr
 fi
 
-set -o vi
-
 complete -cf man
 complete -cf killall
 
