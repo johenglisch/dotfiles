@@ -1,29 +1,25 @@
-! Xft settings
 Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintmedium
-Xft.hinting: true
+Xft.hintstyle: hintnone
+Xft.hinting: false
 Xft.antialias: 1
 Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 
-! UXTerm settings
 UXTerm*foreground: black
 UXTerm*background: LightYellow2
-! UXTerm*bellIsUrgent: true
+UXTerm*bellIsUrgent: true
 UXTerm*font: -*-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-*
 UXTerm*boldfont: -*-fixed-bold-r-normal-*-15-*-*-*-*-*-iso10646-*
 
-! URxvt basic settings
-URxvt.buffered: true
-URxvt.scrollBar: false
-URxvt.externalBorder: 0
-URxvt.borderLess: false
-URxvt.foreground: grey
 URxvt.background: black
+URxvt.borderLess: false
+URxvt.buffered: true
+URxvt.externalBorder: 0
+URxvt.foreground: grey
+URxvt.scrollBar: false
 URxvt.secondaryWheel: true
 URxvt.urgentOnBell: true
 
-! URxvt fonts
 URxvt*font: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*
 URxvt*boldFont: -*-terminus-bold-r-normal-*-16-*-*-*-*-*-iso10646-*
 URxvt*italicFont: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*
