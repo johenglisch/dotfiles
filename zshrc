@@ -12,6 +12,7 @@ autoload -U compinit && compinit
 autoload -U colors && colors
 
 bindkey -v
+bindkey '\C-g' vi-cmd-mode
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 bindkey -M vicmd '\e[A' history-search-backward
