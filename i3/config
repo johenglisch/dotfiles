@@ -85,18 +85,6 @@ bindsym $mod+x move container to output right
 bindsym $mod+Shift+x move workspace to output right
 
 
-## Editor Settings ##
-
-bindsym $mod+v workspace vi
-bindsym $mod+Shift+v exec gvim
-assign [class="Vim"]   → vi
-assign [class="Gvim"]  → vi
-
-bindsym $mod+g workspace emacs
-bindsym $mod+Shift+g exec emacs
-assign [class="Emacs"] → emacs
-
-
 ## Workspace Assignments ##
 
 assign [class="Chromium"]  → 7:www
