@@ -7,6 +7,8 @@ else
     unset $promptclr
 fi
 
+[ "$TERM" = 'xterm' ] && export TERM='xterm-256color'
+
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit
 autoload -U colors && colors

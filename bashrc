@@ -11,6 +11,8 @@ else
     unset pclr
 fi
 
+[ "$TERM" = 'xterm' ] && export TERM='xterm-256color'
+
 complete -cf man
 complete -cf killall
 
