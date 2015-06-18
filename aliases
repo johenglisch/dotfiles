@@ -11,9 +11,10 @@ alias ll='ls -AlF'
 alias mkdir='mkdir -p'
 
 alias v='vim'
+alias g='gvim'
+alias n='nvim'
+alias vim-py3="vim --cmd \"let g:pymode_python='python3'\""
 alias emacs='emacs -nw'
-[ ! -f /usr/bin/vi ] && alias vi="vim -C -u NONE"
-[ -L /usr/bin/vi ] && alias vi="vi -u NONE"
 
 alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
 alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
