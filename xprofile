@@ -1,0 +1,9 @@
+#! /bin/bash
+
+xrdb -merge ~/.Xresources
+xset b off
+xset dpms 300 600 900
+xsetroot -solid black -cursor_name left_ptr
+
+[ -z "$(pidof mpd)" ] && mpd >& /dev/null
+[ -z "$(pidof urxvtd)" ] && urxvtd -q -o -f
