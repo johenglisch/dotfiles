@@ -1,7 +1,7 @@
 ## General Settings ##
 
 font -*-terminus-medium-r-normal--12-*-*-*-*-*-iso10646-*
-set $term /usr/bin/env urxvtc
+set $term /usr/bin/env gnome-terminal
 set $mod Mod4
 floating_modifier $mod
 
@@ -81,6 +81,7 @@ bindsym $mod+Shift+minus move container to workspace 10:media
 ## Monitor Settings ##
 
 workspace 10:media output HDMI2
+bindsym $mod+o focus output right
 bindsym $mod+x move container to output right
 bindsym $mod+Shift+x move workspace to output right
 
@@ -121,6 +122,7 @@ for_window [class="Xfce4-notifyd"]                     floating enable, border n
 for_window [class="URxvt"]          border 1pixel
 for_window [class="XTerm"]          border 1pixel
 for_window [class="UXTerm"]         border 1pixel
+for_window [class="Gnome-terminal"] border 1pixel
 for_window [class="Emacs"]          border 1pixel
 for_window [class="Vim"]            border 1pixel
 for_window [class="Gvim"]           border 1pixel
@@ -175,4 +177,6 @@ bar {
 ## i3-Specific Autostart ##
 
 exec [ -z "$(pidof dunst)" ] && dunst
+exec [ -z "$(pidof mpd)" ] && mpd
 exec [ -z "$(pidof xfce4-power-manager)" ] && xfce4-power-manager
+exec [ -z "$(pidof nm-applet)" ] && nm-applet
