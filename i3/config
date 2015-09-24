@@ -169,6 +169,7 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
 ## i3status Settings ##
 
 bar {
+    tray_output primary
     position top
     status_command i3status -c ~/.i3/status.conf
 }
