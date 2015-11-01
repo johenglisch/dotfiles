@@ -16,6 +16,8 @@ alias n='nvim'
 alias vim-py3="vim --cmd \"let g:pymode_python='python3'\""
 alias emacs='emacs -nw'
 
+alias git-watch='watch git diff --minimal --ignore-all-space'
+
 alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
 alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
 
