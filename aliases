@@ -17,6 +17,9 @@ alias vim-py3="vim --cmd \"let g:pymode_python='python3'\""
 alias emacs='emacs -nw'
 
 alias git-watch='watch git diff --minimal --ignore-all-space'
+alias git-graph='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+
 
 alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
 alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
