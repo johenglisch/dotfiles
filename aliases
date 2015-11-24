@@ -9,6 +9,7 @@ alias huhu='echo -e "\a"'
 alias la='ls -A'
 alias ll='ls -AlF'
 alias mkdir='mkdir -p'
+alias ag='ag --nocolor'
 
 alias v='vim'
 alias g='gvim'
