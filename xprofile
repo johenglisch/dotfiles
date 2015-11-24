@@ -7,3 +7,5 @@ xsetroot -solid black -cursor_name left_ptr
 
 [ -z "$(pidof mpd)" ] && mpd >& /dev/null
 [ -z "$(pidof urxvtd)" ] && urxvtd -q -o -f
+
+reminder &
