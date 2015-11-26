@@ -181,7 +181,6 @@ bar {
 ## i3-Specific Autostart ##
 
 exec [ -z "$(pidof dunst)" ] && dunst
-exec [ -z "$(pidof mpd)" ] && mpd
 exec [ -z "$(pidof xfce4-power-manager)" ] && xfce4-power-manager
 exec [ -z "$(pidof nm-applet)" ] && nm-applet
 
