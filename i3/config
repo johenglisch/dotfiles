@@ -113,6 +113,7 @@ assign [class="URxvt" instance="music"] → 10:media
 for_window [class="Desmume"]                           floating enable
 for_window [class="Gvbam"]                             floating enable
 for_window [class="Icedove" instance="Msgcompose"]     floating enable
+for_window [class="Reminder"]                          floating enable
 for_window [class="Skype" title="Options"]             floating enable
 for_window [class="Skype" title="Skype™.*"]            floating enable
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
@@ -172,7 +173,7 @@ bar {
     tray_output primary
     position top
 
-    mode hide
+    mode dock
 
     status_command i3status -c ~/.i3/status.conf
 }
