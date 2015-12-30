@@ -1,0 +1,13 @@
+[user]
+    name = Johannes Englisch
+    email = cyberjoe0815@hotmail.com
+[push]
+    default = current
+[core]
+    editor = /usr/bin/env vim -p -X
+[alias]
+    a = add
+    b = branch
+    c = commit
+    co = checkout
+    s = status -sb
