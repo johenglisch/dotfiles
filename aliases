@@ -23,6 +23,8 @@ alias git-graph='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%C
 alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
 alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
 
+eval "$(thefuck --alias crap)"
+
 man() {
     env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
         LESS_TERMCAP_md=$(printf "\e[1;31m") \
