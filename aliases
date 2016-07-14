@@ -16,6 +16,9 @@ alias n='nvim'
 alias vim-py3="vim --cmd \"let g:pymode_python='python3'\""
 alias emacs='emacs -nw'
 
+alias ec='emacsclient -t -a ""'
+alias kill-emacs='emacsclient -e "(kill-emacs)"'
+
 alias g='git'
 alias git-watch='watch --color git diff --minimal --ignore-all-space --color'
 alias git-graph='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
