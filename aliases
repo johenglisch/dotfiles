@@ -18,14 +18,7 @@ then
 fi
 
 [ -x "$(which nvim)" ] && alias n='nvim'
-
-if [ -x "$(which emacs)" ]
-then
-    alias emacs='emacs -nw'
-
-    alias ec='emacsclient -t -a ""'
-    alias kill-emacs='emacsclient -e "(kill-emacs)"'
-fi
+[ -x "$(which emacs)" ] && alias emacs='emacs -nw'
 
 if [ -x "$(which git)" ]
 then
