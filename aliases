@@ -2,30 +2,44 @@
 
 alias ls='ls -h --color=auto'
 alias grep='grep --color=auto'
-[ -f /usr/bin/packer-color ] && alias packer='packer-color'
+[ -x "$(which packer-color)" ] && alias packer='packer-color'
 
 alias ..='cd ..'
 alias huhu='echo -e "\a"'
 alias la='ls -A'
 alias ll='ls -AlF'
 alias mkdir='mkdir -p'
-alias ag='ag --nocolor'
+[ -x "$(which ag)" ] && alias ag='ag --nocolor'
 
-alias v='vim'
-alias n='nvim'
-alias vim-py3="vim --cmd \"let g:pymode_python='python3'\""
-alias emacs='emacs -nw'
+if [ -x "$(which vim)" ]
+then
+    alias v='vim'
+    alias vim-py3="vim --cmd \"let g:pymode_python='python3'\""
+fi
 
-alias ec='emacsclient -t -a ""'
-alias kill-emacs='emacsclient -e "(kill-emacs)"'
+[ -x "$(which nvim)" ] && alias n='nvim'
 
-alias g='git'
-alias git-watch='watch --color git diff --minimal --ignore-all-space --color'
-alias git-graph='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-alias git-incoming='git fetch && git log master..origin/master'
+if [ -x "$(which emacs)" ]
+then
+    alias emacs='emacs -nw'
 
-alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
-alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
+    alias ec='emacsclient -t -a ""'
+    alias kill-emacs='emacsclient -e "(kill-emacs)"'
+fi
+
+if [ -x "$(which git)" ]
+then
+    alias g='git'
+    alias git-watch='watch --color git diff --minimal --ignore-all-space --color'
+    alias git-graph='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+    alias git-incoming='git fetch && git log master..origin/master'
+fi
+
+if [ -x "$(which wpa_supplicant)" ]
+then
+    alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
+    alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
+fi
 
 [ -x "$(which thefuck)" ] && eval "$(thefuck --alias crap)"
 
