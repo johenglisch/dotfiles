@@ -22,6 +22,7 @@ alias kill-emacs='emacsclient -e "(kill-emacs)"'
 alias g='git'
 alias git-watch='watch --color git diff --minimal --ignore-all-space --color'
 alias git-graph='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias git-incoming='git fetch && git log master..origin/master'
 
 alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
 alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
