@@ -12,15 +12,15 @@ UXTerm*bellIsUrgent: true
 UXTerm*font: -*-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-*
 UXTerm*boldfont: -*-fixed-bold-r-normal-*-15-*-*-*-*-*-iso10646-*
 
-URxvt.background: black
+URxvt.background: #181a26
 URxvt.borderLess: false
 URxvt.buffered: true
 URxvt.externalBorder: 0
-URxvt.foreground: grey
+URxvt.foreground: #cccccc
 URxvt.scrollBar: false
 URxvt.secondaryWheel: true
 URxvt.urgentOnBell: true
 
-URxvt*font: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*
-URxvt*boldFont: -*-terminus-bold-r-normal-*-16-*-*-*-*-*-iso10646-*
-URxvt*italicFont: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-iso10646-*
+URxvt*font: xft:Hack:size=13
+URxvt*boldFont: xft:Hack:bold:size=13
+URxvt*italicFont: xft:Hack:italic:size=13
