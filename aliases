@@ -2,25 +2,24 @@
 
 alias ls='ls -h --color=auto'
 alias grep='grep --color=auto'
-[ -x "$(which packer-color)" ] && alias packer='packer-color'
 
 alias ..='cd ..'
 alias huhu='echo -e "\a"'
 alias la='ls -A'
 alias ll='ls -AlF'
 alias mkdir='mkdir -p'
-[ -x "$(which ag)" ] && alias ag='ag --nocolor'
+[ -x "$(command -v ag)" ] && alias ag='ag --nocolor'
 
-if [ -x "$(which vim)" ]
+if [ -x "$(command -v vim)" ]
 then
     alias v='vim'
     alias vim-py3="vim --cmd \"let g:pymode_python='python3'\""
 fi
 
-[ -x "$(which nvim)" ] && alias n='nvim'
-[ -x "$(which emacs)" ] && alias emacs='emacs -nw'
+[ -x "$(command -v nvim)" ] && alias n='nvim'
+[ -x "$(command -v emacs)" ] && alias emacs='emacs -nw'
 
-if [ -x "$(which git)" ]
+if [ -x "$(command -v git)" ]
 then
     alias g='git'
     alias git-watch='watch --color git diff --minimal --ignore-all-space --color'
@@ -28,13 +27,11 @@ then
     alias git-incoming='git fetch && git log master..origin/master'
 fi
 
-if [ -x "$(which wpa_supplicant)" ]
+if [ -x "$(command -v wpa_supplicant)" ]
 then
     alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
     alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
 fi
-
-[ -x "$(which thefuck)" ] && eval "$(thefuck --alias crap)"
 
 man() {
     env LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
@@ -47,6 +44,6 @@ man() {
         man "$@"
 }
 
-xinit() {
-    /usr/bin/xinit "$@" -- :1 -nolisten tcp "vt$XDG_VTNR"
-}
+# xinit() {
+#     /usr/bin/xinit "$@" -- :1 -nolisten tcp "vt$XDG_VTNR"
+# }

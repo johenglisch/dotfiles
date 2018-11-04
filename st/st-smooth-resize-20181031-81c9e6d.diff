@@ -1,0 +1,35 @@
+From 81c9e6d534bbb7c539f882897cebea28b93866f5 Mon Sep 17 00:00:00 2001
+From: Johannes Englisch <cyberjoe0815@hotmail.com>
+Date: Wed, 31 Oct 2018 09:50:59 +0100
+Subject: [PATCH] Don't limit resizing to full character widths/heights.
+
+Problem 1: st only resizes to full character widths, which leads to ugly
+gaps in dwm.
+
+Problem 2: st-anysize centres the contents of the terminal, which
+displeases me aesthetically.
+
+Solution: Allow smooth resize, but keep content in the upper-left
+corner.
+---
+ x.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/x.c b/x.c
+index 00cb6b1..f0f6305 100644
+--- a/x.c
++++ b/x.c
+@@ -793,8 +793,8 @@ xhints(void)
+ 	sizeh->flags = PSize | PResizeInc | PBaseSize | PMinSize;
+ 	sizeh->height = win.h;
+ 	sizeh->width = win.w;
+-	sizeh->height_inc = win.ch;
+-	sizeh->width_inc = win.cw;
++	sizeh->height_inc = 1;
++	sizeh->width_inc = 1;
+ 	sizeh->base_height = 2 * borderpx;
+ 	sizeh->base_width = 2 * borderpx;
+ 	sizeh->min_height = win.ch + 2 * borderpx;
+-- 
+2.19.1
+

@@ -1,7 +1,7 @@
 ## General Settings ##
 
-font -*-terminus-medium-r-normal--12-*-*-*-*-*-iso10646-*
-set $term /usr/bin/env gnome-terminal
+font pango:DejaVu Sans Mono 10
+set $term st
 set $mod Mod4
 floating_modifier $mod
 
@@ -88,39 +88,37 @@ bindsym $mod+Shift+x move workspace to output right
 
 ## Workspace Assignments ##
 
-assign [class="Chromium"]  → 7:www
 assign [class="Firefox"]   → 7:www
-assign [class="Iceweasel"] → 7:www
 
 assign [class="Pidgin"]      → 8:mail
 assign [class="Skype"]       → 8:mail
 assign [class="Thunderbird"] → 8:mail
-assign [class="Icedove"]     → 8:mail
 
 assign [class="Evince.*"] → 9:pdf
 assign [class="Okular"]   → 9:pdf
 assign [class="XDvi"]     → 9:pdf
 assign [class="Xpdf"]     → 9:pdf
+assign [class="Zathura"]  → 9:pdf
 
 assign [class="MPlayer"]                → 10:media
-assign [class="Gnome-mplayer"]          → 10:media
 assign [class="Sonata"]                 → 10:media
 assign [class="URxvt" instance="music"] → 10:media
+# The GUI and CLI versions of VLC have different classes...
+assign [class="Vlc"]                    → 10:media
+assign [class="vlc"]                    → 10:media
 
 
 ## Window Properties ##
 
-for_window [class="Desmume"]                           floating enable
-for_window [class="Gvbam"]                             floating enable
-for_window [class="Icedove" instance="Msgcompose"]     floating enable
 for_window [class="Reminder"]                          floating enable
 for_window [class="Skype" title="Options"]             floating enable
 for_window [class="Skype" title="Skype™.*"]            floating enable
-for_window [class="Thunderbird" instance="Msgcompose"] floating enable
+# for_window [class="Thunderbird" instance="Msgcompose"] floating enable
 for_window [class="URxvt" instance="notes"]            floating enable
 for_window [class="Xfce4-notifyd"]                     floating enable, border none
 
 for_window [class="URxvt"]          border 1pixel
+for_window [class="st-256color"]    border 1pixel
 for_window [class="XTerm"]          border 1pixel
 for_window [class="UXTerm"]         border 1pixel
 for_window [class="Gnome-terminal"] border 1pixel
@@ -148,20 +146,27 @@ bindsym $mod+r mode "resize"
 ## Command Shortcuts ##
 
 bindsym $mod+Return       exec $term
-bindsym $mod+Shift+w      exec $term -fg 'black' -bg 'white' -fn '-*-terminus-bold-r-normal-*-16-*-*-*-*-*-iso10646-*' -name white
 bindsym $mod+Shift+Return exec $term -name notes
 bindsym $mod+Shift+p      exec $term -fg 'grey' -bg 'black' -name music -e ncmpcpp
 
-bindsym $mod+p          exec dmenu_run
-bindsym $mod+b          exec firefox
-bindsym $mod+i          exec thunderbird
-bindsym $mod+f          exec pcmanfm
-bindsym XF86ScreenSaver exec slock
+bindsym $mod+p exec dmenu_run
+bindsym $mod+b exec firefox
+bindsym $mod+i exec thunderbird
+bindsym $mod+f exec $term -e ranger
 
-bindsym XF86AudioPlay        exec mpc toggle
-bindsym XF86AudioStop        exec mpc stop
-bindsym XF86AudioPrev        exec mpc prev
-bindsym XF86AudioNext        exec mpc next
+bindsym XF86ScreenSaver exec slock
+bindsym $mod+Escape exec slock
+
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioStop exec mpc stop
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+
+bindsym $mod+Down  exec mpc toggle
+bindsym $mod+Up    exec mpc stop
+bindsym $mod+Left  exec mpc prev
+bindsym $mod+Right exec mpc next
+
 bindsym XF86AudioMute        exec amixer set Master toggle
 bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
@@ -170,11 +175,8 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
 ## i3status Settings ##
 
 bar {
-    tray_output primary
     position top
-
     mode dock
-
     status_command i3status -c ~/.i3/status.conf
 }
 

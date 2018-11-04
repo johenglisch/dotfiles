@@ -1,40 +1,18 @@
-#!/bin/sh
-#
-# ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
+#! /bin/bash
 
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/*; do
-    [ -x "$f" ] && . "$f"
-  done
-  unset f
-fi
+xrdb -merge ~/.Xresources
+xset b off
+xset dpms 300 600 900
+xsetroot -solid black -cursor_name left_ptr
 
-[ -f ~/.xprofile ] && . ~/.xprofile
+mpd
 
-if [ -z $1 ]; then
-    gui=i3
-else
-    gui=$1
-fi
+xfce4-power-manager &
+nm-applet &
+dunst &
 
-case $gui in
-    fluxbox)
-        exec startfluxbox
-        ;;
-    gnome)
-        exec gnome-session
-        ;;
-    i3)
-        exec i3
-        ;;
-    kde)
-        exec startkde
-        ;;
-    xfce)
-        exec startxfce4
-        ;;
-    xmonad)
-        ;;
-esac
+sh ~/.fehbg
+
+bash ~/.dwm/statusbar.bash &
+
+exec dwm

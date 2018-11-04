@@ -1,3 +1,23 @@
+*foreground: #eeeeee
+*background: #222222
+
+*color0: #000000
+*color1: #800000
+*color2: #008000
+*color3: #808000
+*color4: #000080
+*color5: #800080
+*color6: #008080
+*color7: #c0c0c0
+*color8: #808080
+*color9: #ff0000
+*color10: #00ff00
+*color11: #ffff00
+*color12: #0000ff
+*color13: #ff00ff
+*color14: #00ffff
+*color15: #ffffff
+
 Xft.dpi: 120
 Xft.autohint: 0
 Xft.hintstyle: hintnone
@@ -6,21 +26,27 @@ Xft.antialias: 1
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
-UXTerm*foreground: black
-UXTerm*background: LightYellow2
-UXTerm*bellIsUrgent: true
-UXTerm*font: -*-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-*
-UXTerm*boldfont: -*-fixed-bold-r-normal-*-15-*-*-*-*-*-iso10646-*
+UXTerm.bellIsUrgent: true
+UXTerm.font: -*-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-*
+UXTerm.boldfont: -*-fixed-bold-r-normal-*-15-*-*-*-*-*-iso10646-*
 
-URxvt.background: #181a26
+URxvt.font: xft:DejaVu Sans Mono:size=13
+URxvt.boldFont: xft:DejaVu Sans Mono:bold:size=13
+URxvt.italicFont: xft:DejaVu Sans Mono:italic:size=13
+
+Urxvt.cursorColor: #00ff00
 URxvt.borderLess: false
 URxvt.buffered: true
 URxvt.externalBorder: 0
-URxvt.foreground: #cccccc
 URxvt.scrollBar: false
 URxvt.secondaryWheel: true
 URxvt.urgentOnBell: true
 
-URxvt*font: xft:Hack:size=13
-URxvt*boldFont: xft:Hack:bold:size=13
-URxvt*italicFont: xft:Hack:italic:size=13
+URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+URxvt.matcher.button: 1
+URxvt.matcher.launcher: /usr/bin/xdg-open
+URxvt.matcher.underline: true
