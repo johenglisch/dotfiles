@@ -76,9 +76,9 @@ static const char *mpc_toggle[] = { "mpc", "toggle", NULL };
 static const char *mpc_prev[]   = { "mpc", "prev", NULL };
 static const char *mpc_next[]   = { "mpc", "next", NULL };
 
-static const char *vol_mute[] = { "pamixer", "--toggle-mute", NULL};
-static const char *vol_up[]   = { "pamixer", "--increase", "5", "--unmute", NULL};
-static const char *vol_down[] = { "pamixer", "--decrease", "5", "--unmute", NULL};
+static const char *vol_mute[] = { "pulsemixer", "--toggle-mute", NULL};
+static const char *vol_up[]   = { "pulsemixer", "--change-volume", "+5", "--unmute", NULL};
+static const char *vol_down[] = { "pulsemixer", "--change-volume", "-5", "--unmute", NULL};
 
 static Key keys[] = {
     /* modifier          key         function  argument */
