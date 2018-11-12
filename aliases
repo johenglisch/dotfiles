@@ -9,6 +9,7 @@ alias la='ls -A'
 alias ll='ls -AlF'
 alias mkdir='mkdir -p'
 [ -x "$(command -v ag)" ] && alias ag='ag --nocolor'
+[ -x "$(command -v tmux)" ] && alias t=tmux
 
 if [ -x "$(command -v vim)" ]
 then
