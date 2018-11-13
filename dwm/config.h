@@ -72,6 +72,7 @@ static const char *pvt_browsercmd[]    = { "firefox", "--private-window", NULL }
 static const char *mailreadercmd[] = { "thunderbird", NULL };
 
 static const char *mpc_stop[]   = { "mpc", "stop", NULL };
+static const char *mpc_clear[]  = { "mpc", "clear", NULL };
 static const char *mpc_toggle[] = { "mpc", "toggle", NULL };
 static const char *mpc_prev[]   = { "mpc", "prev", NULL };
 static const char *mpc_next[]   = { "mpc", "next", NULL };
@@ -91,15 +92,17 @@ static Key keys[] = {
     { 0,       XF86XK_ScreenSaver,  spawn,  {.v = slockcmd } },
     { MODKEY,  XK_Escape,           spawn,  {.v = slockcmd } },
 
-    { MODKEY,  XK_Up,             spawn,  {.v = mpc_stop } },
-    { MODKEY,  XK_Down,           spawn,  {.v = mpc_toggle } },
-    { MODKEY,  XK_Left,           spawn,  {.v = mpc_prev } },
-    { MODKEY,  XK_Right,          spawn,  {.v = mpc_next } },
+    { MODKEY,           XK_Up,             spawn,  {.v = mpc_stop } },
+    { MODKEY|ShiftMask, XK_Up,             spawn,  {.v = mpc_clear } },
+    { MODKEY,           XK_Down,           spawn,  {.v = mpc_toggle } },
+    { MODKEY,           XK_Left,           spawn,  {.v = mpc_prev } },
+    { MODKEY,           XK_Right,          spawn,  {.v = mpc_next } },
 
-    { 0,       XF86XK_AudioStop,  spawn,  {.v = mpc_stop } },
-    { 0,       XF86XK_AudioPlay,  spawn,  {.v = mpc_toggle } },
-    { 0,       XF86XK_AudioPrev,  spawn,  {.v = mpc_prev } },
-    { 0,       XF86XK_AudioNext,  spawn,  {.v = mpc_next } },
+    { 0,                XF86XK_AudioStop,  spawn,  {.v = mpc_stop } },
+    { ShiftMask,        XF86XK_AudioStop,  spawn,  {.v = mpc_clear } },
+    { 0,                XF86XK_AudioPlay,  spawn,  {.v = mpc_toggle } },
+    { 0,                XF86XK_AudioPrev,  spawn,  {.v = mpc_prev } },
+    { 0,                XF86XK_AudioNext,  spawn,  {.v = mpc_next } },
 
     { MODKEY,  XK_Home,                  spawn,  {.v = vol_mute } },
     { MODKEY,  XK_Prior,                 spawn,  {.v = vol_up } },
