@@ -5,6 +5,7 @@ xset b off
 xset dpms 300 600 900
 xsetroot -solid black -cursor_name left_ptr
 numlockx on
+xbindkeys
 
 mpd
 

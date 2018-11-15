@@ -65,53 +65,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *slockcmd[] = { "slock", NULL };
-
-static const char *browsercmd[]    = { "firefox", NULL };
-static const char *pvt_browsercmd[]    = { "firefox", "--private-window", NULL };
-static const char *mailreadercmd[] = { "thunderbird", NULL };
-
-static const char *mpc_stop[]   = { "mpc", "stop", NULL };
-static const char *mpc_clear[]  = { "mpc", "clear", NULL };
-static const char *mpc_toggle[] = { "mpc", "toggle", NULL };
-static const char *mpc_prev[]   = { "mpc", "prev", NULL };
-static const char *mpc_next[]   = { "mpc", "next", NULL };
-
-static const char *vol_mute[] = { "pulsemixer", "--toggle-mute", NULL};
-static const char *vol_up[]   = { "pulsemixer", "--change-volume", "+5", "--unmute", NULL};
-static const char *vol_down[] = { "pulsemixer", "--change-volume", "-5", "--unmute", NULL};
 
 static Key keys[] = {
-    /* modifier          key         function  argument */
-    { MODKEY,            XK_p,       spawn,    {.v = dmenucmd } },
-    { MODKEY,            XK_Return,  spawn,    {.v = termcmd } },
-    { MODKEY,            XK_b,       spawn,    {.v = browsercmd } },
-    { MODKEY|ShiftMask,  XK_b,       spawn,    {.v = pvt_browsercmd } },
-    { MODKEY,            XK_i,       spawn,    {.v = mailreadercmd } },
-
-    { 0,       XF86XK_ScreenSaver,  spawn,  {.v = slockcmd } },
-    { MODKEY,  XK_Escape,           spawn,  {.v = slockcmd } },
-
-    { MODKEY,           XK_Up,             spawn,  {.v = mpc_stop } },
-    { MODKEY|ShiftMask, XK_Up,             spawn,  {.v = mpc_clear } },
-    { MODKEY,           XK_Down,           spawn,  {.v = mpc_toggle } },
-    { MODKEY,           XK_Left,           spawn,  {.v = mpc_prev } },
-    { MODKEY,           XK_Right,          spawn,  {.v = mpc_next } },
-
-    { 0,                XF86XK_AudioStop,  spawn,  {.v = mpc_stop } },
-    { ShiftMask,        XF86XK_AudioStop,  spawn,  {.v = mpc_clear } },
-    { 0,                XF86XK_AudioPlay,  spawn,  {.v = mpc_toggle } },
-    { 0,                XF86XK_AudioPrev,  spawn,  {.v = mpc_prev } },
-    { 0,                XF86XK_AudioNext,  spawn,  {.v = mpc_next } },
-
-    { MODKEY,  XK_Home,                  spawn,  {.v = vol_mute } },
-    { MODKEY,  XK_Prior,                 spawn,  {.v = vol_up } },
-    { MODKEY,  XK_Next,                  spawn,  {.v = vol_down } },
-
-    { 0,       XF86XK_AudioMute,         spawn,  {.v = vol_mute } },
-    { 0,       XF86XK_AudioRaiseVolume,  spawn,  {.v = vol_up } },
-    { 0,       XF86XK_AudioLowerVolume,  spawn,  {.v = vol_down } },
-
+    /* modifier          key        function        argument */
+    { MODKEY,            XK_p,      spawn,          {.v = dmenucmd } },
+    { MODKEY,            XK_Return, spawn,          {.v = termcmd } },
     { MODKEY|ShiftMask,  XK_f,      togglebar,      {0} },
     { MODKEY,            XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,            XK_k,      focusstack,     {.i = -1 } },

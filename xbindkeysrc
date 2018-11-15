@@ -1,0 +1,46 @@
+"firefox"
+    Mod4 + b
+"firefox --private-window"
+    Mod4+Shift + b
+"thunderbird"
+    Mod4+i
+
+"slock"
+    XF86ScreenSaver
+"slock"
+    Mod4 + Escape
+
+"mpc toggle"
+    XF86AudioPlay
+"mpc stop"
+    XF86AudioStop
+"mpc prev"
+    XF86AudioPrev
+"mpc next"
+    XF86AudioNext
+
+"mpc toggle"
+    Mod4 + Down
+"mpc stop"
+    Mod4 + Up
+"mpc prev"
+    Mod4 + Left
+"mpc next"
+    Mod4 + Right
+
+"mpc clear"
+    Mod4+Shift + Up
+
+"pactl set-sink-mute 0 toggle"
+    XF86AudioMute
+"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
+    XF86AudioRaiseVolume
+"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
+    XF86AudioLowerVolume
+
+"pactl set-sink-mute 0 toggle"
+    Mod4 + Home
+"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
+    Mod4 + Prior
+"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
+    Mod4 + Next
