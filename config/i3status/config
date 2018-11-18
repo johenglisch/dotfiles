@@ -12,29 +12,41 @@ general {
 }
 
 order += "volume master"
+order += "ethernet enp4s0"
+order += "wireless wlp5s0"
 order += "battery 0"
 order += "cpu_usage"
 order += "tztime local"
 
 volume master {
-    format = "vol %volume"
-    format_muted = "vol %volume[m]"
+    format = "◂%volume"
+    format_muted = "∅%volume"
     device = "pulse"
     mixer = "Master"
+}
+
+ethernet enp4s0 {
+    format_up = "🖧✓"
+    format_down = "🖧✗"
+}
+
+wireless wlp5s0 {
+    format_up = "📶✓"
+    format_down = "📶✗"
 }
 
 battery 0 {
     last_full_capacity = true
     hide_seconds = true
-    format = "bat %percentage %status%remaining"
-    status_chr = 'chrg '
-    status_bat = 'dischrg '
-    status_unk = '??? '
-    status_full = ''
+    format = "%status%percentage"
+    status_chr = '↑'
+    status_bat = '↓'
+    status_unk = '?'
+    status_full = '⚡'
 }
 
 cpu_usage {
-    format = "cpu %usage"
+    format = "#%usage"
 }
 
 tztime local {

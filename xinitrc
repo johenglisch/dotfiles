@@ -10,7 +10,6 @@ xbindkeys
 mpd
 
 xfce4-power-manager &
-nm-applet &
 dunst &
 
 sh ~/.fehbg
