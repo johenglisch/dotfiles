@@ -44,3 +44,6 @@
     Mod4 + Prior
 "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
     Mod4 + Next
+
+"st -n scratch"
+    Mod4 + z
