@@ -153,7 +153,8 @@ clientkeys = gears.table.join(
     awful.key({MODKEY, "Shift"}, "Return", function(c) c:swap(awful.client.getmaster()) end),
     awful.key({MODKEY, "Shift"}, ",",      function(c) c:move_to_screen() end),
     awful.key({MODKEY, "Shift"}, ".",      function(c) c:move_to_screen() end),
-    awful.key({MODKEY}, "t",               function(c) c.ontop = not c.ontop end))
+    awful.key({MODKEY}, "t",               function(c) c.ontop = not c.ontop end),
+    awful.key({MODKEY, "Shift"}, "m",      function(c) c.maximized = false c:raise() end))
 
 -- Bind all key numbers to tags.
 for i = 1, 9 do
