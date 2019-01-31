@@ -47,3 +47,6 @@
 
 "st -n scratch"
     Mod4 + z
+
+"systemctl suspend"
+    Mod4 + F12
