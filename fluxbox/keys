@@ -1,0 +1,131 @@
+### Mouse Controls ###
+
+# Clicking on the desktop
+
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+
+# Alt + left/right click to move/resize a window
+
+OnWindowBorder Move1 :StartMoving
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+
+# Title bar stuff
+
+OnTitlebar Control Mouse1 :StartTabbing
+OnTitlebar Double Mouse1 :Maximize
+
+OnTitlebar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
+OnTitlebar Move1  :StartMoving
+
+OnTitlebar Mouse3 :WindowMenu
+
+
+### Key Bindings ###
+
+# Cycle windows
+
+Mod1 Tab :NextWindow {groups} (workspace=[current])
+Mod1 Shift Tab :PrevWindow {groups} (workspace=[current])
+
+# Window command
+
+Mod4 Shift f :Fullscreen
+Mod4 m :Maximize
+# Mod4 j :Minimize
+Mod4 Shift c :Close
+Mod1 F4 :Close
+
+# # This binding needs a home
+# Mod4 Shift space :WindowMenu
+
+# Keyboard move/resize
+
+Mod4 h :MoveLeft 20
+Mod4 j :MoveDown 20
+Mod4 k :MoveUp 20
+Mod4 l :MoveRight 20
+
+Mod4 Shift h :MoveLeft 1
+Mod4 Shift j :MoveDown 1
+Mod4 Shift k :MoveUp 1
+Mod4 Shift l :MoveRight 1
+
+Control Mod4 h :ResizeHorizontal -20
+Control Mod4 j :ResizeVertical 20
+Control Mod4 k :ResizeVertical -20
+Control Mod4 l :ResizeHorizontal 20
+
+Control Mod4 Shift h :ResizeHorizontal -1
+Control Mod4 Shift j :ResizeVertical 1
+Control Mod4 Shift k :ResizeVertical -1
+Control Mod4 Shift l :ResizeHorizontal 1
+
+# Window tabs
+
+Mod4 Tab :NextTab
+Mod4 Shift Tab :PrevTab
+
+#Mod4 1 :Tab 1
+#Mod4 2 :Tab 2
+#Mod4 3 :Tab 3
+#Mod4 4 :Tab 4
+#Mod4 5 :Tab 5
+#Mod4 6 :Tab 6
+#Mod4 7 :Tab 7
+#Mod4 8 :Tab 8
+#Mod4 9 :Tab 9
+
+# Workspaces
+
+Control Mod1 h :PrevWorkspace
+Control Mod1 l :NextWorkspace
+
+Control Mod1 Shift h :TakeToPrevWorkspace
+Control Mod1 Shift l :TakeToNextWorkspace
+
+Mod4 Shift comma :SendToPrevHead
+Mod4 Shift period :SendToNextHead
+
+Mod4 1 :Workspace 1
+Mod4 2 :Workspace 2
+Mod4 3 :Workspace 3
+Mod4 4 :Workspace 4
+Mod4 5 :Workspace 5
+Mod4 6 :Workspace 6
+Mod4 7 :Workspace 7
+Mod4 8 :Workspace 8
+Mod4 9 :Workspace 9
+
+Mod4 Shift 1 :SendToWorkspace 1
+Mod4 Shift 2 :SendToWorkspace 2
+Mod4 Shift 3 :SendToWorkspace 3
+Mod4 Shift 4 :SendToWorkspace 4
+Mod4 Shift 5 :SendToWorkspace 5
+Mod4 Shift 6 :SendToWorkspace 6
+Mod4 Shift 7 :SendToWorkspace 7
+Mod4 Shift 8 :SendToWorkspace 8
+Mod4 Shift 9 :SendToWorkspace 9
+
+
+# Control fluxbox
+
+Mod4 r :Reconfig
+Mod4 Shift r :Restart
+Mod4 Shift q :Exit
+
+Mod4 Shift w :Restart /usr/bin/fluxbox
+Mod4 Shift e :Restart /home/johannes/.local/opt/fluxbox/bin/fluxbox
+
+
+# Run programs
+
+Mod1 F2 :Exec fbrun
+
+Mod4 Return :Exec st
+Mod4 p :Exec dmenu_run

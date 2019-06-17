@@ -2,16 +2,17 @@
 
 [[ $- != *i* ]] && return
 
-if [ "$TERM" = 'dumb' ]; then
-    PS1="\W\$ "
+if [ "$TERM" = dumb ]
+then
+    PS1='\W\$ '
 else
-    pclr='0;32'
-    [ $UID -eq 0 ] && pclr='0;31'
-    PS1="\[\e[${pclr}m\]\W\$\[\e[00m\] "
-    unset pclr
+    prompt_colour=32
+    [ $UID -eq 0 ] && prompt_colour=31
+    PS1="\\[\\e[0;${prompt_colour}m\\]\\W\\$\\[\\e[00m\\] "
+    unset prompt_colour
 fi
 
-[ "$TERM" = 'xterm' ] && export TERM='xterm-256color'
+[ "$TERM" = xterm ] && export TERM=xterm-256color
 
 complete -cf man
 complete -cf killall

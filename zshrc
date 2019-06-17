@@ -1,13 +1,16 @@
-if [ "$TERM" = 'dumb' ]; then
+# ~/.zshrc
+
+if [ "$TERM" = dumb ]
+then
     prompt="%1~%# "
 else
-    promptclr='green'
-    [ $UID -eq 0 ] && promptclr='red'
+    promptclr=green
+    [ $UID -eq 0 ] && promptclr=red
     prompt="%{%F{$promptclr}%}%1~%#%{%f%} "
     unset $promptclr
 fi
 
-[ "$TERM" = 'xterm' ] && export TERM='xterm-256color'
+[ "$TERM" = xterm ] && export TERM=xterm-256color
 
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit
@@ -30,7 +33,7 @@ bindkey -M vicmd v edit-command-line
 stty stop undef
 stty start undef
 
-HISTFILE=~/.histfile
+HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory

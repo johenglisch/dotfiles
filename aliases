@@ -1,50 +1,24 @@
 #! /bin/sh
 
-alias ls='ls -h --color=auto'
-alias grep='grep --color=auto'
+alias ls='ls -h'
 
 alias ..='cd ..'
 alias huhu='echo -e "\a"'
 alias la='ls -A'
+alias lf='ls -F'
 alias ll='ls -AlF'
 alias mkdir='mkdir -p'
-[ -x "$(command -v ag)" ] && alias ag='ag --nocolor'
-[ -x "$(command -v tmux)" ] && alias t=tmux
 
-if [ -x "$(command -v vim)" ]
-then
-    alias v='vim'
-    alias vim-py3="vim --cmd \"let g:pymode_python='python3'\""
-fi
-
-[ -x "$(command -v nvim)" ] && alias n='nvim'
-[ -x "$(command -v emacs)" ] && alias emacs='emacs -nw'
+test -x "$(command -v ag)"    && alias ag='ag --nocolor'
+test -x "$(command -v emacs)" && alias emacs='emacs -nw'
+test -x "$(command -v nvim)"  && alias n=nvim
+test -x "$(command -v tmux)"  && alias t=tmux
+test -x "$(command -v vim)"   && alias v=vim
 
 if [ -x "$(command -v git)" ]
 then
-    alias g='git'
+    alias g=git
     alias git-watch='watch --color git diff --minimal --ignore-all-space --color'
     alias git-graph='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
     alias git-incoming='git fetch && git log master..origin/master'
 fi
-
-if [ -x "$(command -v wpa_supplicant)" ]
-then
-    alias wpa='wpa_supplicant -BDwext -iwifi -c/root/wpa_supplicant.conf'
-    alias wpa_c='wpa_supplicant -BDwext -iwifi -c'
-fi
-
-man() {
-    env LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
-        LESS_TERMCAP_md="$(printf "\e[1;31m")" \
-        LESS_TERMCAP_me="$(printf "\e[0m")" \
-        LESS_TERMCAP_se="$(printf "\e[0m")" \
-        LESS_TERMCAP_so="$(printf "\e[1;44;33m")" \
-        LESS_TERMCAP_ue="$(printf "\e[0m")" \
-        LESS_TERMCAP_us="$(printf "\e[1;32m")" \
-        man "$@"
-}
-
-# xinit() {
-#     /usr/bin/xinit "$@" -- :1 -nolisten tcp "vt$XDG_VTNR"
-# }
