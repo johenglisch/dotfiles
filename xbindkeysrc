@@ -31,22 +31,19 @@
 "mpc clear"
     Mod4+Shift + Up
 
-"pactl set-sink-mute 0 toggle"
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
     XF86AudioMute
-"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%"
     XF86AudioRaiseVolume
-"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%"
     XF86AudioLowerVolume
 
-"pactl set-sink-mute 0 toggle"
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
     Mod4 + Home
-"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%"
     Mod4 + Prior
-"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%"
     Mod4 + Next
-
-"st -n scratch"
-    Mod4 + z
 
 "systemctl suspend"
     Mod4 + F12
