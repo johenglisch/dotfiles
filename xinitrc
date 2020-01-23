@@ -14,32 +14,32 @@ xsetroot -solid black -cursor_name left_ptr
 xbindkeys &
 numlockx on
 
-export GTK_IM_MODULE=uim
-export QT_IM_MODULE=uim
+GTK_IM_MODULE=uim
+QT_IM_MODULE=uim
+export GTK_IM_MODULE QT_IM_MODULE
 uim-xim &
-export XMODIFIERS=@im=uim
 
-update-notification &
+XMODIFIERS=@im=uim
+export XMODIFIERS
 
-case "${wm:-xfce4}" in
+mpd &
+
+wm=dwm
+case "$wm" in
     dwm)
+        update-notification-dwm &
         xfce4-power-manager &
-        dunst &
-        xwallpaper --zoom ~/.background-image --daemon &
+        xwallpaper --zoom ~/.bg/earthrise-fhd.png --daemon &
+
         uim-toolbar-gtk3 &
-        dwm-status &
+
+        compton -b &
+        dwm-status | dwm-bar &
         exec dwm
         ;;
-    fluxbox)
-        xfce4-power-manager &
-        dunst &
-        xwallpaper --zoom ~/.background-image --daemon &
-        uim-toolbar-gtk3-systray &
-        pasystray &
-        exec fluxbox
-        ;;
     xfce4)
-        uim-toolbar-gtk3 &
+        update-notification-deb &
+        uim-toolbar-gtk3-systray &
         exec startxfce4
         ;;
     *)
