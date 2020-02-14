@@ -33,6 +33,7 @@ case "$wm" in
 
         uim-toolbar-gtk3 &
 
+        dunst &
         compton -b &
         dwm-status | dwm-bar &
         exec dwm

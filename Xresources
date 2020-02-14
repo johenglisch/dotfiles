@@ -1,6 +1,3 @@
-*foreground: #eeeeee
-*background: #222222
-
 *color0: #000000
 *color1: #800000
 *color2: #008000
@@ -26,10 +23,14 @@ Xft.antialias: 1
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
-UXTerm.bellIsUrgent: true
+UXTerm.foreground: #eeeeee
+UXTerm.background: #222222
 UXTerm.font: -*-fixed-medium-r-normal-*-15-*-*-*-*-*-iso10646-*
 UXTerm.boldfont: -*-fixed-bold-r-normal-*-15-*-*-*-*-*-iso10646-*
+UXTerm.bellIsUrgent: true
 
+URxvt.foreground: #eeeeee
+URxvt.background: #222222
 URxvt.font: xft:DejaVu Sans Mono:size=13
 URxvt.boldFont: xft:DejaVu Sans Mono:bold:size=13
 URxvt.italicFont: xft:DejaVu Sans Mono:italic:size=13
