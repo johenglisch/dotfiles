@@ -31,6 +31,9 @@
 "mpc clear"
     Mod4+Shift + Up
 
+"url-watch"
+    Mod4+Shift + Down
+
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     XF86AudioMute
 "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%"
