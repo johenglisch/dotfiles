@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	/* class      instance    title  tags mask  isfloating   monitor */
 	{ "qjackctl",  NULL,      NULL,  0,         1,          -1 },
 	{ "st",        "scratch", NULL,  0,         1,          -1 },
+	{ "skype",     NULL,      NULL,  0,         0,          -1 },
 };
 
 /* layout(s) */
@@ -120,6 +121,7 @@ static Button buttons[] = {
 
 /* custom functions */
 
+static
 void
 togglefullscreen(const Arg *arg)
 {

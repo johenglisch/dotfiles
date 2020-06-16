@@ -1,11 +1,12 @@
 #!/bin/sh
 
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 update_counter()
 {
     updates=?
-    test -f ~/.cache/update_count && updates="$(cat ~/.cache/update_count)"
-    echo "$updates"
+    test -f "$cache_dir/update_count" && updates="$(cat "$cache_dir/update_count")"
+    [ -n "$updates" ] && [ "$updates" != 0 ] && echo " ↑$updates |"
 }
 
 
@@ -27,5 +28,5 @@ mpd_statusbar()
 
 i3status | while read -r LINE
 do
-    echo "$(mpd_statusbar) ↑$(update_counter) | $LINE"
+    echo "$(mpd_statusbar)$(update_counter) $LINE"
 done

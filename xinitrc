@@ -24,7 +24,7 @@ export XMODIFIERS
 
 mpd &
 
-wm=dwm
+wm="${wm:-dwm}"
 case "$wm" in
     dwm)
         update-notification-dwm &
@@ -36,12 +36,12 @@ case "$wm" in
         dunst &
         compton -b &
         dwm-status | dwm-bar &
-        exec dwm
+        exec ssh-agent dwm
         ;;
     xfce4)
         update-notification-deb &
         uim-toolbar-gtk3-systray &
-        exec startxfce4
+        exec ssh-agent startxfce4
         ;;
     *)
         echo "unknown session: $wm" 1>&2

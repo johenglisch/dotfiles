@@ -50,3 +50,12 @@
 
 "systemctl suspend"
     Mod4 + F12
+
+"automonitor"
+    XF86Display
+
+"toggle-wifi"
+    XF86RFKill
+
+"scrot -u"
+    Print
