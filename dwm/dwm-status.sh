@@ -26,6 +26,26 @@ mpd_statusbar()
 }
 
 
+newsboat_print_unread()
+{
+    # Reading newsboat's cache manually; `print-unread` quietly commits sudoku
+    # when newsboat is already running
+    sqlite3 \
+        "${XDG_DATA_HOME:-$HOME/.local/share}/newsboat/cache.db" \
+        'select count(*) from rss_item where unread=1;'
+}
+
+
+unread_feeds()
+{
+    unread_items="$(newsboat_print_unread)"
+    if [ -n "$unread_items" ] && [ "$unread_items" != 0 ]
+    then
+        echo " 📰$unread_items |"
+    fi
+}
+
+
 i3status | while read -r LINE
 do
     echo "$(mpd_statusbar)$(update_counter) $LINE"

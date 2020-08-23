@@ -22,3 +22,16 @@ then
     alias git-graph='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
     alias git-incoming='git fetch && git log master..origin/master'
 fi
+
+if [ -x "$(command -v youtube-dl)" ]
+then
+    yt-dl()
+    {
+        youtube-dl --add-metadata -f 'bestvideo[height<=1080]+bestaudio' "$@"
+    }
+
+    yt-pl()
+    {
+        youtube-dl --add-metadata -f 'bestvideo[height<=1080]+bestaudio' -i -o '%(playlist_index)03d-%(title)s.%(ext)s' "$@"
+    }
+fi

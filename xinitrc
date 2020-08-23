@@ -27,7 +27,9 @@ mpd &
 wm="${wm:-dwm}"
 case "$wm" in
     dwm)
-        update-notification-dwm &
+        apt-get -sqq --no-install-recommends dist-upgrade \
+            | grep -c ^Inst \
+            > "${XDG_CACHE_HOME:-$HOME/.cache}/update_count" &
         xfce4-power-manager &
         xwallpaper --zoom ~/.bg/earthrise-fhd.png --daemon &
 
@@ -37,6 +39,17 @@ case "$wm" in
         compton -b &
         dwm-status | dwm-bar &
         exec ssh-agent dwm
+        ;;
+    openbox)
+        xfce4-power-manager &
+        xwallpaper --zoom ~/.bg/earthrise-fhd.png --daemon &
+
+        uim-toolbar-gtk3-systray &
+
+        dunst &
+        compton -b &
+        tint2 &
+        exec ssh-agent openbox
         ;;
     xfce4)
         update-notification-deb &

@@ -1,9 +1,18 @@
+"dmenu_run"
+    Mod4 + p
+
+"kitty"
+    Mod4 + Return
+
 "firefox"
     Mod4 + b
 "firefox --private-window"
     Mod4+Shift + b
 "thunderbird"
     Mod4+i
+
+"emacs"
+    Mod4 + e
 
 "slock"
     XF86ScreenSaver
