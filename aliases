@@ -35,3 +35,27 @@ then
         youtube-dl --add-metadata -f 'bestvideo[height<=1080]+bestaudio' -i -o '%(playlist_index)03d-%(title)s.%(ext)s' "$@"
     }
 fi
+
+if [ -x "$(command -v locate)" ] && [ -x "$(command -v fzf)" ]
+then
+    _fcd_only_dirs()
+    {
+        while read -r f
+        do
+            test -d "$f" && echo "$f"
+        done
+    }
+
+    _fcd_choose_dir()
+    {
+        locate -b "$1" \
+            | grep -v '/\.' \
+            | _fcd_only_dirs \
+            | fzf -1
+    }
+
+    fcd()
+    {
+        dir="$(_fcd_choose_dir "$1")" && cd "$dir"
+    }
+fi
