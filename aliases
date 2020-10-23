@@ -1,12 +1,10 @@
 #! /bin/sh
 
-alias ls='ls -h'
-
 alias ..='cd ..'
 alias huhu='echo -e "\a"'
-alias la='ls -A'
+alias la='ls -AF'
 alias lf='ls -F'
-alias ll='ls -AlF'
+alias ll='ls -AhlF'
 alias mkdir='mkdir -p'
 
 test -x "$(command -v ag)"    && alias ag='ag --nocolor'
@@ -51,7 +49,7 @@ then
         locate -b "$1" \
             | grep -v '/\.' \
             | _fcd_only_dirs \
-            | fzf -1
+            | fzf -1 --reverse --height=20 --history="${XDG_CACHE_HOME:-$HOME/.cache}/fcd.history"
     }
 
     fcd()
