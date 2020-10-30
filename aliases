@@ -49,7 +49,7 @@ then
         locate -b "$1" \
             | grep -v '/\.' \
             | _fcd_only_dirs \
-            | fzf -1 --reverse --height=20 --history="${XDG_CACHE_HOME:-$HOME/.cache}/fcd.history"
+            | fzf -1 --reverse --height=20 --history="${XDG_CACHE_HOME:-$HOME/.cache}/fcd.history" --no-sort
     }
 
     fcd()
