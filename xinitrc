@@ -14,15 +14,9 @@ xsetroot -solid black -cursor_name left_ptr
 xbindkeys &
 numlockx on
 
-GTK_IM_MODULE=uim
-QT_IM_MODULE=uim
-export GTK_IM_MODULE QT_IM_MODULE
-uim-xim &
+fcitx -d
 
-XMODIFIERS=@im=uim
-export XMODIFIERS
-
-mpd &
+pidof mpd || mpd &
 
 wm="${wm:-dwm}"
 case "$wm" in
@@ -49,6 +43,7 @@ case "$wm" in
         dunst &
         compton -b &
         tint2 &
+        pasystray &
         exec ssh-agent openbox
         ;;
     xfce4)

@@ -15,10 +15,9 @@
 *color14: #00ffff
 *color15: #ffffff
 
-Xft.dpi: 120
 Xft.autohint: 0
-Xft.hintstyle: hintnone
-Xft.hinting: false
+Xft.hintstyle: hintfull
+Xft.hinting: true
 Xft.antialias: 1
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
