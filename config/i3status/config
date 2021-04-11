@@ -12,8 +12,8 @@ general {
 }
 
 order += "volume master"
-order += "ethernet enp4s0"
-order += "wireless wlp5s0"
+order += "ethernet enp5s0"
+order += "wireless wlp6s0"
 order += "battery 0"
 order += "cpu_usage"
 order += "tztime local"
@@ -25,12 +25,12 @@ volume master {
     mixer = "Master"
 }
 
-ethernet enp4s0 {
+ethernet enp5s0 {
     format_up = "🖧✓"
     format_down = "🖧✗"
 }
 
-wireless wlp5s0 {
+wireless wlp6s0 {
     format_up = "📶✓"
     format_down = "📶✗"
 }

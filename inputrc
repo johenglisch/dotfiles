@@ -1,4 +1,4 @@
-set editing-mode vi
+# set editing-mode vi
 
 set completion-ignore-case on
 set menu-complete-display-prefix on

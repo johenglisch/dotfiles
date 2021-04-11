@@ -9,17 +9,10 @@ alias mkdir='mkdir -p'
 
 test -x "$(command -v ag)"    && alias ag='ag --nocolor'
 test -x "$(command -v emacs)" && alias emacs='emacs -nw'
+test -x "$(command -v git)"   && alias g=git
 test -x "$(command -v nvim)"  && alias n=nvim
 test -x "$(command -v tmux)"  && alias t=tmux
 test -x "$(command -v vim)"   && alias v=vim
-
-if [ -x "$(command -v git)" ]
-then
-    alias g=git
-    alias git-watch='watch --color git diff --minimal --ignore-all-space --color'
-    alias git-graph='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-    alias git-incoming='git fetch && git log master..origin/master'
-fi
 
 if [ -x "$(command -v youtube-dl)" ]
 then

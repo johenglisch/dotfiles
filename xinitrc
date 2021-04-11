@@ -2,7 +2,9 @@
 
 . ~/.profile
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
+#xrandr --setprovideroutputsource modesetting 1
+xrandr --setprovideroffloadsink 1 0
+xrandr --setprovideroutputsource 0 1
 automonitor
 
 xrdb -merge ~/.Xresources
@@ -13,8 +15,6 @@ xsetroot -solid black -cursor_name left_ptr
 
 xbindkeys &
 numlockx on
-
-fcitx -d
 
 pidof mpd || mpd &
 
@@ -27,8 +27,6 @@ case "$wm" in
         xfce4-power-manager &
         xwallpaper --zoom ~/.bg/earthrise-fhd.png --daemon &
 
-        uim-toolbar-gtk3 &
-
         dunst &
         compton -b &
         dwm-status | dwm-bar &
@@ -38,8 +36,6 @@ case "$wm" in
         xfce4-power-manager &
         xwallpaper --zoom ~/.bg/earthrise-fhd.png --daemon &
 
-        uim-toolbar-gtk3-systray &
-
         dunst &
         compton -b &
         tint2 &
@@ -48,7 +44,6 @@ case "$wm" in
         ;;
     xfce4)
         update-notification-deb &
-        uim-toolbar-gtk3-systray &
         exec ssh-agent startxfce4
         ;;
     *)
