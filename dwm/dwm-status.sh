@@ -46,7 +46,15 @@ unread_feeds()
 }
 
 
+mic_status()
+{
+    amixer get Capture \
+        | grep -q 'Capture.*\[on\]' \
+        && echo ' 🎤 |'
+}
+
+
 i3status | while read -r LINE
 do
-    echo "$(mpd_statusbar)$(update_counter) $LINE"
+    echo "$(mpd_statusbar)$(update_counter)$(mic_status) $LINE"
 done
