@@ -25,6 +25,11 @@ then
     {
         youtube-dl --add-metadata -f 'bestvideo[height<=1080]+bestaudio' -i -o '%(playlist_index)03d-%(title)s.%(ext)s' "$@"
     }
+
+    yt-ns()
+    {
+        youtube-dl --add-metadata -f best -o '%(uploader)s - %(title)s.%(ext)s' "$@"
+    }
 fi
 
 if [ -x "$(command -v fuzzy-cd)" ] && [ -x "$(command -v fzf)" ]
