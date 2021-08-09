@@ -131,3 +131,6 @@ togglefullscreen(const Arg *arg)
 		return;
 	setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
 }
+
+
+/* vim: set noet ts=4 sts=4 sw=4: */
