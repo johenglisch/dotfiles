@@ -5,13 +5,13 @@ set menu-complete-display-prefix on
 
 set bell-style none
 
-set keymap vi-command
-"\e[a": history-search-backward
-"\e[b": history-search-backward
-j: history-search-backward
-k: history-search-forward
+# set keymap vi-command
+# "\e[a": history-search-backward
+# "\e[b": history-search-backward
+# j: history-search-backward
+# k: history-search-forward
 
-set keymap vi-insert
-"\C-g": vi-command-mode
-"\e[a": history-search-backward
-"\e[b": history-search-backward
+# set keymap vi-insert
+# "\C-g": vi-command-mode
+# "\e[a": history-search-backward
+# "\e[b": history-search-backward
