@@ -84,6 +84,7 @@ for_window [class="URxvt" instance="notes"]            floating enable
 for_window [class="Xfce4-notifyd"]                     floating enable, border none
 
 for_window [class="URxvt"]          border 1pixel
+for_window [class="kitty"]          border 1pixel
 for_window [class="st-256color"]    border 1pixel
 for_window [class="XTerm"]          border 1pixel
 for_window [class="UXTerm"]         border 1pixel
