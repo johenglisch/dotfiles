@@ -21,6 +21,6 @@ complete -cf killall
 stty stop undef
 stty start undef
 
-set -o vi
+# set -o vi
 
 source ~/.aliases
