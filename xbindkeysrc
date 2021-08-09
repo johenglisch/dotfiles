@@ -1,12 +1,18 @@
 "dmenu_run"
     Mod4 + p
 
-"kitty"
+"kitty -1"
     Mod4 + Return
 
-"firefox"
+"exo-open --launch FileManager"
+    Mod4 + f
+
+"kitty -1 mc"
+    Mod4 + c
+
+"firefox-esr"
     Mod4 + b
-"firefox --private-window"
+"firefox-esr --private-window"
     Mod4+Shift + b
 "thunderbird"
     Mod4+i
@@ -57,6 +63,9 @@
 "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%"
     Mod4 + Next
 
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    Mod4 + X
+
 "systemctl suspend"
     Mod4 + F12
 
@@ -68,3 +77,6 @@
 
 "scrot -u"
     Print
+
+"scrot"
+    Mod4 + Print
