@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 . ~/.profile
 
@@ -18,17 +18,17 @@ numlockx on
 
 pidof mpd || mpd &
 
-wm="${wm:-dwm}"
+wm="${wm:-xfce4}"
 case "$wm" in
     dwm)
-        apt-get -sqq --no-install-recommends dist-upgrade \
-            | grep -c ^Inst \
-            > "${XDG_CACHE_HOME:-$HOME/.cache}/update_count" &
+        (pacman -Qu | wc -l \
+            > "${XDG_CACHE_HOME:-$HOME/.cache}/update_count") &
         xfce4-power-manager &
         xwallpaper --zoom ~/.bg/earthrise-fhd.png --daemon &
 
         dunst &
-        compton -b &
+        picom -b &
+        # compton -b &
         dwm-status | dwm-bar &
         exec ssh-agent dwm
         ;;
@@ -37,14 +37,23 @@ case "$wm" in
         xwallpaper --zoom ~/.bg/earthrise-fhd.png --daemon &
 
         dunst &
-        compton -b &
+        picom -b &
+        # compton -b &
         tint2 &
         pasystray &
         exec ssh-agent openbox
         ;;
     xfce4)
-        update-notification-deb &
+        (pacman -Qu | wc -l \
+            > "${XDG_CACHE_HOME:-$HOME/.cache}/update_count") &
         exec ssh-agent startxfce4
+        ;;
+    kde)
+        (pacman -Qu | wc -l \
+            > "${XDG_CACHE_HOME:-$HOME/.cache}/update_count") &
+        DESKTOP_SESSION=plasma
+        export DESKTOP_SESSION
+        exec startplasma-x11
         ;;
     *)
         echo "unknown session: $wm" 1>&2
