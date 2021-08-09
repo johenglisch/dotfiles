@@ -30,6 +30,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title  tags mask  isfloating   monitor */
 	{ "qjackctl",  NULL,      NULL,  0,         1,          -1 },
+	{ "QjackCtl",  NULL,      NULL,  0,         1,          -1 },
 	{ "st",        "scratch", NULL,  0,         1,          -1 },
 	{ "skype",     NULL,      NULL,  0,         0,          -1 },
 };
