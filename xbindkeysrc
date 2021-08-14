@@ -80,3 +80,6 @@
 
 "scrot"
     Mod4 + Print
+
+"scrot -s"
+    Alt + Print
