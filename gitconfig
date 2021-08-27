@@ -5,6 +5,7 @@
     default = current
 [core]
     editor = /usr/bin/env vim -p -X
+    autocrlf = input
 [alias]
     a = add
     b = branch
@@ -12,4 +13,6 @@
     co = checkout
     s = status -sb
 [pull]
-	rebase = false
+    rebase = false
+[credential]
+    helper = cache
