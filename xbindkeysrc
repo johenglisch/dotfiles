@@ -4,7 +4,7 @@
 "kitty -1"
     Mod4 + Return
 
-"exo-open --launch FileManager"
+"pcmanfm"
     Mod4 + f
 
 "kitty -1 mc"
@@ -20,9 +20,13 @@
 "emacs"
     Mod4 + e
 
-"slock"
+# "slock"
+#     XF86ScreenSaver
+# "slock"
+#     Mod4 + Escape
+"xflock4"
     XF86ScreenSaver
-"slock"
+"xflock4"
     Mod4 + Escape
 
 "mpc toggle"

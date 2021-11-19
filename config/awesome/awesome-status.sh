@@ -1,22 +1,68 @@
-#! /bin/sh
+#!/bin/sh
 
-mpd_status()
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}"
+
+update_counter()
 {
-    local mpc_output
-    mpc_output="$(mpc -f "[%title%[ – %artist%]]|[%file%]")"
+    updates='?'
+    test -f "$cache_dir/update_count" && updates="$(cat "$cache_dir/update_count")"
+    [ -n "$updates" ] && [ "$updates" != 0 ] && echo " ↑$updates |"
+}
 
-    local status
-    status="$(echo "$mpc_output" | awk '/^\[/ {print $1}')"
-    test -z "$status" && return
+mpd_statusbar()
+{
+    mpd_output="$(mpc -f "[%title%[ – %artist%]]|[%file%]")"
 
-    local icon
-    icon=⏸
-    test "$status" = "[playing]" && icon=♫
+    mpd_status="$(echo "$mpd_output" | awk '/^\[/ {print $1}')"
+    test -z "$mpd_status" && return
 
-    local current_song
-    current_song="$(echo "$mpc_output" | head -n1 | cut -c1-35)"
+    mpd_icon=⏸
+    test "$mpd_status" = "[playing]" && mpd_icon=♫
 
-    echo "${icon} ${current_song} | "
+    mpd_song="$(echo "$mpd_output" | head -n1 | cut -c1-35 | iconv -c)"
+
+    echo " $mpd_icon $mpd_song |"
+}
+
+old_mic_status()
+{
+    amixer get Capture \
+        | grep -q 'Capture.*\[on\]' \
+        && echo ' 🎤 |'
+}
+
+less_old_mic_status()
+{
+    pactl list short sources \
+        | grep -q 'RUNNING$' \
+        && echo ' 🎤 |'
+}
+
+# FIXME this is jank af
+awk_program()
+{
+    cat <<EOF
+function print_sink(sink)
+{
+    if (sink)
+    {
+        if (running) { r="!" } else { r="" }
+        print " 🎤" sink r
+    }
+}
+BEGIN { ORS=" " ; sink="" ; running=0 }
+/^Source/ { if (sink) { print_sink(sink) } ; sink=\$2 ; running=0 }
+/device.class = "monitor"/ { sink="" }
+/State: RUNNING/ { running=1 }
+/Mute: yes/ { sink="" }
+END { if (sink) { print_sink(sink) ; print "|" } }
+EOF
+}
+
+mic_status()
+{
+    # XXX there must be a better way™ (<_<)"
+    pactl list sources | awk "$(awk_program)"
 }
 
 is_up()
@@ -26,11 +72,9 @@ is_up()
 
 volume()
 {
-    local icon
     icon=🔇
     test "$(pulsemixer --get-mute)" = "0" && icon=🔉
 
-    local vol
     vol="$(pulsemixer --get-volume | awk '{ if ($1 == $2) {print $1} else {print $1 ":" $2} }')"
 
     echo "$icon$vol%"
@@ -39,10 +83,8 @@ volume()
 bat()
 {
     # XXX Maybe time is more useful than percentage when discharging
-    local charge
     charge="$(acpi -b | awk '{print $4}' | tr -d ,)"
 
-    local icon
     case "$(acpi -b | awk '{print $3}')" in
         'Discharging,')
             icon=🔋
@@ -61,4 +103,8 @@ bat()
     echo "$icon$charge"
 }
 
-echo " $(mpd_status)$(volume) | 🖧$(is_up enp4s0) 📶$(is_up wlp5s0) | $(bat) | $(date +'%a %d %b %R') "
+# $(mpd_statusbar)
+# 🖧$(is_up enp5s0) 📶$(is_up wlp6s0) |
+# $(date +'%a %d %b %R')
+# echo " $(mpd_status)$(volume) | 🖧$(is_up enp5s0) 📶$(is_up wlp6s0) | $(bat) "
+echo "$(update_counter)$(mic_status) $(volume) | $(bat) |"

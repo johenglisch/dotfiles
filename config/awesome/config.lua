@@ -1,6 +1,6 @@
 MODKEY = "Mod4"
 
-TERMINAL = "st"
+TERMINAL = "kitty -1"
 DMENU_CMD = "dmenu_run -fn 'DejaVu Sans Mono:size=12'"
 
 FONT = "DejaVu Sans 9"

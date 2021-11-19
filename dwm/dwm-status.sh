@@ -46,11 +46,46 @@ unread_feeds()
 }
 
 
-mic_status()
+old_mic_status()
 {
     amixer get Capture \
         | grep -q 'Capture.*\[on\]' \
         && echo ' 🎤 |'
+}
+
+less_old_mic_status()
+{
+    pactl list short sources \
+        | grep -q 'RUNNING$' \
+        && echo ' 🎤 |'
+}
+
+
+# FIXME this is jank af
+awk_program()
+{
+    cat <<EOF
+function print_sink(sink)
+{
+    if (sink)
+    {
+        if (running) { r="!" } else { r="" }
+        print " 🎤" sink r
+    }
+}
+BEGIN { ORS=" " ; sink="" ; running=0 }
+/^Source/ { if (sink) { print_sink(sink) } ; sink=\$2 ; running=0 }
+/device.class = "monitor"/ { sink="" }
+/State: RUNNING/ { running=1 }
+/Mute: yes/ { sink="" }
+END { if (sink) { print_sink(sink) ; print "|" } }
+EOF
+}
+
+mic_status()
+{
+    # XXX there must be a better way™ (<_<)"
+    pactl list sources | awk "$(awk_program)"
 }
 
 
