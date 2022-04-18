@@ -1,0 +1,13 @@
+[app] (name=fbrun)
+  [Position]	(WINCENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (class=mpv)
+  [Dimensions]	{1024 576}
+  #[Layer]	{2}
+[end]
+[app] (class=conky)
+  #[Dimensions]	{0 0}
+  #[Deco]	{NONE}
+  [Layer]	{4}
+[end]
