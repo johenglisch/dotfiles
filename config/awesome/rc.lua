@@ -82,6 +82,13 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 )
 
 
+-- Window snapping (or rather the lack thereof)
+
+awful.mouse.snap.edge_enabled = false
+awful.mouse.snap.client_enabled = false
+awful.mouse.drag_to_tag.enabled = false
+
+
 -- Layouts
 
 awful.layout.layouts = {
