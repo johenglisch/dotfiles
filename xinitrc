@@ -34,7 +34,7 @@ numlockx on
 pgrep mpd >/dev/null || mpd &
 pgrep syndaemon >/dev/null || syndaemon -d -i 0.5 -K &
 
-wm="${wm:-floating}"
+wm="${wm:-fluxbox}"
 case "$wm" in
     dwm)
         new_updates &
@@ -42,33 +42,37 @@ case "$wm" in
         sh ~/.fehbg
 
         dunst &
-        picom -cC --backend glx --vsync -b &
+        picom -bc \
+            --unredir-if-possible --xinerama-shadow-crop \
+            --backend glx --glx-no-stencil --glx-no-rebind-pixmap
         dwm-status | dwm-bar &
         exec ssh-agent dwm
         ;;
-    floating)
+    awesome)
         new_updates &
         xfce4-power-manager &
         sh ~/.fehbg
-        xscreensaver -no-splash &
 
-        conky -d &
-
+        #conky -d &
         dunst &
-        picom -cC --backend glx --vsync -b &
+        picom -bc \
+            --unredir-if-possible --xinerama-shadow-crop \
+            --backend glx --glx-no-stencil --glx-no-rebind-pixmap
+        exec ssh-agent awesome
         #pasystray &
-        exec ssh-agent startfluxbox
-        #exec ssh-agent awesome
+        #exec ssh-agent startfluxbox
         ;;
-    openbox)
+    fluxbox)
         xfce4-power-manager &
         sh ~/.fehbg
 
+        #conky -d &
         dunst &
-        picom -cC --backend glx --vsync -b &
-        tint2 &
+        picom -bc \
+            --unredir-if-possible --xinerama-shadow-crop \
+            --backend glx --glx-no-stencil --glx-no-rebind-pixmap
         pasystray &
-        exec ssh-agent openbox
+        exec ssh-agent startfluxbox
         ;;
     xfce4)
         new_updates &
