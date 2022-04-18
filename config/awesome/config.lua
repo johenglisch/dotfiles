@@ -1,9 +1,9 @@
 MODKEY = "Mod4"
 
 TERMINAL = "kitty -1"
-DMENU_CMD = "dmenu_run -fn 'DejaVu Sans Mono:size=12'"
+DMENU_CMD = "dmenu_run -fn 'Monospace:size=12'"
 
-FONT = "DejaVu Sans 9"
+FONT = "Sans 9"
 
 BORDER_WIDTH = 2
 
