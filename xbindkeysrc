@@ -4,7 +4,7 @@
 "kitty -1"
     Mod4 + Return
 
-"pcmanfm"
+"thunar"
     Mod4 + f
 
 "kitty -1 mc"
@@ -20,14 +20,14 @@
 "emacs"
     Mod4 + e
 
-# "slock"
-#     XF86ScreenSaver
-# "slock"
-#     Mod4 + Escape
-"xflock4"
+"slock"
     XF86ScreenSaver
-"xflock4"
+"slock"
     Mod4 + Escape
+# "xflock4"
+#     XF86ScreenSaver
+# "xflock4"
+#     Mod4 + Escape
 
 "mpc toggle"
     XF86AudioPlay
@@ -70,8 +70,12 @@
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     Mod4 + X
 
-"systemctl suspend"
-    Mod4 + F12
+"kitty -1 -e pulsemixer"
+    Mod4 + L
+
+# # suspend is broken currently
+# "systemctl suspend"
+#     Mod4 + F12
 
 "automonitor"
     XF86Display
