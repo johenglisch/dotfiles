@@ -14,16 +14,18 @@ test -x "$(command -v nvim)"  && alias n=nvim
 test -x "$(command -v tmux)"  && alias t=tmux
 test -x "$(command -v vim)"   && alias v=vim
 
+#test -x "$(command -v mpv)" && alias mpv='mpv --stop-screensaver=yes --x11-pypass-compositor=never'
+
 if [ -x "$(command -v youtube-dl)" ]
 then
     yt-dl()
     {
-        youtube-dl --add-metadata -f 'bestvideo[height<=1080]+bestaudio' -o '%(uploader)s - %(title)s.%(ext)s' "$@"
+        youtube-dl --add-metadata -f 'bestvideo[height<=1080][protocol!=http_dash_segments]+bestaudio' -o '%(uploader)s - %(title)s.%(ext)s' "$@"
     }
 
     yt-pl()
     {
-        youtube-dl --add-metadata -f 'bestvideo[height<=1080]+bestaudio' -i -o '%(playlist_index)03d-%(title)s.%(ext)s' "$@"
+        youtube-dl --add-metadata -f 'bestvideo[height<=1080][protocol!=http_dash_segments]+bestaudio' -i -o '%(playlist_index)03d-%(title)s.%(ext)s' "$@"
     }
 
     yt-ns()
