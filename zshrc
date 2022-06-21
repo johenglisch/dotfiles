@@ -16,6 +16,10 @@ autoload -U promptinit && promptinit
 autoload -U compinit && compinit
 autoload -U colors && colors
 
+# case-insensitive completion 
+# XXX: only for ascii?
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
 # dear zsh,
 # please dont randomly enable vi mode just because i set my $EDITOR to vim
 # cheers (^^)/
