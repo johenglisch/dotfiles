@@ -23,6 +23,7 @@ xrandr --setprovideroutputsource 0 1
 automonitor
 
 xrdb -merge ~/.Xresources
+setxkbmap -option grp:shifts_toggle,compose:caps de,ru nodeadkeys,ruu
 
 xset b off
 xset dpms 300 600 900
@@ -32,53 +33,64 @@ xbindkeys &
 numlockx on
 
 pgrep mpd >/dev/null || mpd &
-pgrep syndaemon >/dev/null || syndaemon -d -i 0.5 -K &
+#pgrep syndaemon >/dev/null || syndaemon -d -i 0.5 -K &
 
-wm="${wm:-fluxbox}"
+# mute all mics by default
+# TODO there must be a better way™
+#  -> somewhere in the pulseaudio config?
+#  -> somewhere in the pipewire config?
+pactl list sources \
+    | grep Name: \
+    | cut -d' ' -f2- \
+    | while read -r src_id
+do
+    pactl set-source-mute "$src_id" true
+done
+unset src_id
+
+wm="${wm:-plasma}"
 case "$wm" in
-    dwm)
+    tiling)
         new_updates &
         xfce4-power-manager &
         sh ~/.fehbg
-
         dunst &
         picom -bc \
             --unredir-if-possible --xinerama-shadow-crop \
-            --backend glx --glx-no-stencil --glx-no-rebind-pixmap
-        dwm-status | dwm-bar &
+            --backend glx --glx-no-stencil --glx-no-rebind-pixmap \
+            --shadow-exclude 'class_i = "dwm"' \
+            --shadow-exclude 'class_i = "i3-frame"' \
+            --shadow-exclude 'class_g = "i3-bar"' \
+            --shadow-exclude 'class_g = "_HERBST_FRAME"'
+        lxpolkit &
+        (dwm-status | dwm-bar) &
         exec ssh-agent dwm
         ;;
-    awesome)
+    fluxbox)
         new_updates &
         xfce4-power-manager &
         sh ~/.fehbg
 
-        #conky -d &
-        dunst &
-        picom -bc \
-            --unredir-if-possible --xinerama-shadow-crop \
-            --backend glx --glx-no-stencil --glx-no-rebind-pixmap
-        exec ssh-agent awesome
-        #pasystray &
-        #exec ssh-agent startfluxbox
-        ;;
-    fluxbox)
-        xfce4-power-manager &
-        sh ~/.fehbg
+        wmtime &
+        wmcore &
+        wmnd -I enp5s0 &
+        wmnd -I wlp6s0 &
+        wmupdates ~/.cache/update_count &
 
-        #conky -d &
         dunst &
+        nm-applet &
         picom -bc \
             --unredir-if-possible --xinerama-shadow-crop \
             --backend glx --glx-no-stencil --glx-no-rebind-pixmap
         pasystray &
+        lxpolkit &
         exec ssh-agent startfluxbox
         ;;
     xfce4)
         new_updates &
         exec ssh-agent startxfce4
         ;;
-    kde)
+    plasma)
         DESKTOP_SESSION=plasma
         export DESKTOP_SESSION
         exec startplasma-x11
