@@ -16,7 +16,7 @@ autoload -U promptinit && promptinit
 autoload -U compinit && compinit
 autoload -U colors && colors
 
-# case-insensitive completion 
+# case-insensitive completion
 # XXX: only for ascii?
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
@@ -29,7 +29,7 @@ bindkey -e
 stty stop undef
 stty start undef
 
-HISTFILE="$HOME/.histfile"
+HISTFILE="$HOME/.zsh_history"
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory
