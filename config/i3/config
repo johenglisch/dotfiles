@@ -1,9 +1,12 @@
 ## General Settings ##
 
-font pango:DejaVu Sans Mono 10
-set $term kitty
+font pango:Sans 9
+set $term kitty -1
 set $mod Mod4
 floating_modifier $mod
+
+gaps inner 6
+#smart_gaps on
 
 
 ## Window Manager Actions ##
@@ -20,8 +23,8 @@ bindsym $mod+Shift+f fullscreen
 
 bindsym $mod+a       focus parent
 bindsym $mod+Shift+a focus child
-bindsym $mod+e       layout toggle split
-bindsym $mod+Shift+e split v
+bindsym $mod+t       layout toggle split
+bindsym $mod+Shift+t split v
 
 bindsym $mod+z       move scratchpad
 bindsym $mod+Shift+z scratchpad show
@@ -54,6 +57,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -64,6 +68,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 
 ## Monitor Settings ##
@@ -83,17 +88,17 @@ for_window [class="Skype" title="Skype™.*"]            floating enable
 for_window [class="URxvt" instance="notes"]            floating enable
 for_window [class="Xfce4-notifyd"]                     floating enable, border none
 
-for_window [class="URxvt"]          border 1pixel
-for_window [class="kitty"]          border 1pixel
-for_window [class="st-256color"]    border 1pixel
-for_window [class="XTerm"]          border 1pixel
-for_window [class="UXTerm"]         border 1pixel
-for_window [class="Gnome-terminal"] border 1pixel
-for_window [class="Emacs"]          border 1pixel
-for_window [class="Vim"]            border 1pixel
-for_window [class="Gvim"]           border 1pixel
-for_window [class="Dwarf_Fortress"] border 1pixel
-for_window [class="Minecraft.*"]    border 1pixel
+# for_window [class="URxvt"]          border 1pixel
+# for_window [class="kitty"]          border 1pixel
+# for_window [class="st-256color"]    border 1pixel
+# for_window [class="XTerm"]          border 1pixel
+# for_window [class="UXTerm"]         border 1pixel
+# for_window [class="Gnome-terminal"] border 1pixel
+# for_window [class="Emacs"]          border 1pixel
+# for_window [class="Vim"]            border 1pixel
+# for_window [class="Gvim"]           border 1pixel
+# for_window [class="Dwarf_Fortress"] border 1pixel
+# for_window [class="Minecraft.*"]    border 1pixel
 
 
 # Resize Window
@@ -114,6 +119,7 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Return       exec $term
 bindsym $mod+p exec dmenu_run
+bindsym $mod+ö  exec dmenu-desktop
 
 
 ## i3status Settings ##
