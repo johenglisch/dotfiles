@@ -4,8 +4,8 @@
 "kitty -1"
     Mod4 + Return
 
-"thunar"
-    Mod4 + f
+# "thunar"
+#     Mod4 + f
 
 "kitty -1 mc"
     Mod4 + c
@@ -20,10 +20,10 @@
 "emacs"
     Mod4 + e
 
-"slock"
-    XF86ScreenSaver
-"slock"
-    Mod4 + Escape
+# "slock"
+#     XF86ScreenSaver
+# "slock"
+#     Mod4 + Escape
 # "xflock4"
 #     XF86ScreenSaver
 # "xflock4"
