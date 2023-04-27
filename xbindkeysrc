@@ -1,13 +1,13 @@
-"dmenu_run"
-    Mod4 + p
+# "dmenu_run -i"
+#     Mod4 + p
 
-"kitty -1"
+"konsole"
     Mod4 + Return
 
-# "thunar"
-#     Mod4 + f
+"dolphin"
+    Mod4 + f
 
-"kitty -1 mc"
+"konsole -e mc"
     Mod4 + c
 
 "firefox-esr"
@@ -17,7 +17,7 @@
 "thunderbird"
     Mod4+i
 
-"emacs"
+"emacsclient -nc"
     Mod4 + e
 
 # "slock"
@@ -55,22 +55,22 @@
 
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     XF86AudioMute
-"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%"
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +1%"
     XF86AudioRaiseVolume
-"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%"
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -1%"
     XF86AudioLowerVolume
 
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     Mod4 + Home
-"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%"
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +1%"
     Mod4 + Prior
-"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%"
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -1%"
     Mod4 + Next
 
-"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-    Mod4 + X
+# "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+#     Mod4 + X
 
-"kitty -1 -e pulsemixer"
+"konsole -e pulsemixer"
     Mod4 + L
 
 # # suspend is broken currently

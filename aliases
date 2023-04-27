@@ -18,19 +18,21 @@ test -x "$(command -v vim)"   && alias v=vim
 
 if [ -x "$(command -v youtube-dl)" ]
 then
+    # [protocol!=http_dash_segments]
     yt-dl()
     {
-        youtube-dl --add-metadata -f 'bestvideo[height<=1080][protocol!=http_dash_segments]+bestaudio' -o '%(uploader)s - %(title)s.%(ext)s' "$@"
+        youtube-dl --add-metadata -f 'bestvideo[height<=1080]+bestaudio' -o '%(uploader)s - %(title)s.%(ext)s' --compat-options filename-sanitization "$@"
     }
 
+    # [protocol!=http_dash_segments]
     yt-pl()
     {
-        youtube-dl --add-metadata -f 'bestvideo[height<=1080][protocol!=http_dash_segments]+bestaudio' -i -o '%(playlist_index)03d-%(title)s.%(ext)s' "$@"
+        youtube-dl --add-metadata -f 'bestvideo[height<=1080]+bestaudio' -i -o '%(playlist_index)03d-%(title)s.%(ext)s' --compat-options filename-sanitization "$@"
     }
 
     yt-ns()
     {
-        youtube-dl --add-metadata -f best -o '%(uploader)s - %(title)s.%(ext)s' "$@"
+        youtube-dl --add-metadata -f best -o '%(uploader)s - %(title)s.%(ext)s' --compat-options filename-sanitization "$@"
     }
 fi
 

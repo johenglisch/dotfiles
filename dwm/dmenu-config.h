@@ -23,6 +23,14 @@ static const char *prompt      = NULL;      /* -p  option; prompt to the left of
 // 	[SchemeOut] = { "#000000", "#00ffff" },
 // };
 
+// // BellePintosGrande
+// static const char *colors[SchemeLast][2] = {
+// 	/*     fg         bg       */
+// 	[SchemeNorm] = { "#000000", "#afadbf" },
+// 	[SchemeSel] = { "#ffffff", "#b24d7a" },
+// 	[SchemeOut] = { "#000000", "#00ffff" },
+// };
+
 // // Breeze
 // static const char *colors[SchemeLast][2] = {
 // 	/*     fg         bg       */
@@ -31,11 +39,19 @@ static const char *prompt      = NULL;      /* -p  option; prompt to the left of
 // 	[SchemeOut] = { "#000000", "#00ffff" },
 // };
 
-// Breeze Dark
+// // Breeze Dark
+// static const char *colors[SchemeLast][2] = {
+// 	/*     fg         bg       */
+// 	[SchemeNorm] = { "#fcfcfc", "#2a2e32" },
+// 	[SchemeSel] = { "#fcfcfc", "#3daee9" },
+// 	[SchemeOut] = { "#000000", "#00ffff" },
+// };
+
+// Breeze Dark but purple
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#fcfcfc", "#2a2e32" },
-	[SchemeSel] = { "#fcfcfc", "#3daee9" },
+	[SchemeNorm] = { "#fcfcfc", "#1b1e20" }, // #2a2e32
+	[SchemeSel] = { "#fcfcfc", "#926ee4" },
 	[SchemeOut] = { "#000000", "#00ffff" },
 };
 
