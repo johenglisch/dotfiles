@@ -13,6 +13,7 @@ test -x "$(command -v git)"   && alias g=git
 test -x "$(command -v nvim)"  && alias n=nvim
 test -x "$(command -v tmux)"  && alias t=tmux
 test -x "$(command -v vim)"   && alias v=vim
+test -x "$(command -v xsct)"  && alias sct=xsct
 
 #test -x "$(command -v mpv)" && alias mpv='mpv --stop-screensaver=yes --x11-pypass-compositor=never'
 

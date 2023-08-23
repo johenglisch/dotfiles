@@ -1,16 +1,20 @@
+#!/usr/bin/env zsh
 # ~/.zshrc
 
-if [ "$TERM" = dumb ]
+if [[ $TERM = dumb ]]
 then
     prompt="%1~%# "
 else
     promptclr=green
-    [ $UID -eq 0 ] && promptclr=red
+    [[ $UID -eq 0 ]] && promptclr=red
     prompt="%{%F{$promptclr}%}%1~%#%{%f%} "
     unset $promptclr
 fi
 
-[ "$TERM" = xterm ] && export TERM=xterm-256color
+if [[ $TERM = xterm ]]
+then
+    export TERM=xterm-256color
+fi
 
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit
@@ -24,6 +28,12 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 # please dont randomly enable vi mode just because i set my $EDITOR to vim
 # cheers (^^)/
 bindkey -e
+
+# emacs' word-wise movement moves waaaay to far
+bindkey -M emacs "^[b" vi-backward-word
+bindkey -M emacs "^[B" vi-backward-word
+bindkey -M emacs "^[f" vi-forward-word
+bindkey -M emacs "^[F" vi-forward-word
 
 # disable C-q and C-s
 stty stop undef

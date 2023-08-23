@@ -1,18 +1,22 @@
+#!/usr/bin/env bash
 # ~/.bashrc
 
 [[ $- != *i* ]] && return
 
-if [ "$TERM" = dumb ]
+if [[ $TERM = dumb ]]
 then
     PS1='\W\$ '
 else
     prompt_colour=32
-    [ $UID -eq 0 ] && prompt_colour=31
+    [[ $UID -eq 0 ]] && prompt_colour=31
     PS1="\\[\\e[0;${prompt_colour}m\\]\\W\\$\\[\\e[00m\\] "
     unset prompt_colour
 fi
 
-[ "$TERM" = xterm ] && export TERM=xterm-256color
+if [[ $TERM = xterm ]]
+then
+    export TERM=xterm-256color
+fi
 
 complete -cf man
 complete -cf killall

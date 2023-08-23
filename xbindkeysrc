@@ -1,18 +1,18 @@
-# "dmenu_run -i"
-#     Mod4 + p
+"dmenu_run -i"
+    Mod4 + p
 
-"konsole"
+"kitty -1"
     Mod4 + Return
 
-"dolphin"
+"thunar"
     Mod4 + f
 
-"konsole -e mc"
+"kitty -1 -e mc"
     Mod4 + c
 
-"firefox-esr"
+"firefox"
     Mod4 + b
-"firefox-esr --private-window"
+"firefox --private-window"
     Mod4+Shift + b
 "thunderbird"
     Mod4+i
@@ -67,10 +67,16 @@
 "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -1%"
     Mod4 + Next
 
-# "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-#     Mod4 + X
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    Mod4 + X
 
-"konsole -e pulsemixer"
+"brightnessctl set 10%-"
+    Mod4 + F11
+
+"brightnessctl set +10%"
+    Mod4 + F12
+
+"kitty -1 -e pulsemixer"
     Mod4 + L
 
 # # suspend is broken currently
