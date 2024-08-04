@@ -1,0 +1,49 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-weight: normal;
+    font-style: normal;
+}
+
+window#waybar {
+    color: #222222;
+    background: #e2e2e2;
+}
+
+box.modules-left {
+    color: #222222;
+    background: #e2e2e2;
+}
+
+#workspaces button {
+    color: #e2e2e2;
+    background-color: #222222;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces button.active {
+    color: #222222;
+    background-color: #e2e2e2;
+}
+
+box.modules-right {
+    color: #e2e2e2;
+    background: #222222;
+}
+
+#clock {
+    color: #222222;
+    background: #e2e2e2;
+}
+
+#workspaces button:hover {
+    transition: none;
+    color: #e2e2e2;
+    background: #444444;
+}

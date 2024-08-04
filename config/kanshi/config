@@ -1,0 +1,10 @@
+#include /etc/kanshi/config.d/*
+
+profile {
+    output eDP-1 enable mode 1920x1080 position 0,0 scale 1.25
+}
+
+profile desk {
+    output eDP-1 enable mode 1920x1080 position 0,0 scale 1.25
+    output "Fujitsu Siemens Computers GmbH B19-2 YEFP070426" enable mode 1280x1024 position 1536,0 scale 1.0
+}

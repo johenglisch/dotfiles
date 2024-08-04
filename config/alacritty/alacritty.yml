@@ -8,8 +8,8 @@ env:
 window:
   # Window dimensions (changes require restart)
   dimensions:
-    columns: 80
-    lines: 24
+    columns: 83
+    lines: 35
 
   # Window padding (changes require restart)
   padding:
@@ -115,9 +115,13 @@ colors:
     #foreground: '0xffffff'
     #background: '0x000000'
 
-    # eggshell
-    foreground: '0x222222'
-    background: '0xF0EAD6'
+    # # eggshell
+    # foreground: '0x222222'
+    # background: '0xF0EAD6'
+
+    # wheatgrass.el
+    foreground: '0xf5deb3'
+    background: '0x000000'
 
   normal:
     black:   '0x000000'

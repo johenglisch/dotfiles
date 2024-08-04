@@ -4,6 +4,7 @@
 if [[ $TERM = dumb ]]
 then
     prompt="%1~%# "
+    unset zle_bracketed_paste
 else
     promptclr=green
     [[ $UID -eq 0 ]] && promptclr=red

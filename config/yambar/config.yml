@@ -1,0 +1,9 @@
+bar:
+  font: sans 10
+  location: top
+  background: 222222ff
+
+  right:
+    - clock:
+        content:
+          - string: {text: "{time}"}

@@ -1,0 +1,5 @@
+player=mpv
+#player=mpv --cached
+twitch-low-latency
+twitch-disable-ads
+title="{author} – {title}"
