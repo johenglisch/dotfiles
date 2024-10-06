@@ -12,7 +12,10 @@
     c = commit
     co = checkout
     s = status -sb
+    sw = switch
 [pull]
     rebase = false
 [credential]
     helper = cache
+[merge]
+	conflictstyle = diff3
