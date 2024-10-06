@@ -27,4 +27,7 @@ stty start undef
 
 # set -o vi
 
-source ~/.aliases
+if [[ -f ~/.aliases ]]
+then
+    source ~/.aliases
+fi
