@@ -41,6 +41,6 @@ if [ -x "$(command -v fuzzy-cd)" ] && [ -x "$(command -v fzf)" ]
 then
     j()
     {
-        fuzzy_cd_dir="$(fuzzy-cd "$1")" && cd "$fuzzy_cd_dir"
+        fuzzy_cd_dir="$(fuzzy-cd "$@")" && cd "$fuzzy_cd_dir"
     }
 fi

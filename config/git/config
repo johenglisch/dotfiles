@@ -13,9 +13,10 @@
     co = checkout
     s = status -sb
     sw = switch
+    r = restore
 [pull]
     rebase = false
 [credential]
     helper = cache
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
