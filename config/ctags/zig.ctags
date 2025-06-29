@@ -1,0 +1,15 @@
+--langdef=zig
+--map-zig=+.zig
+--kinddef-zig=f,func,Function
+--kinddef-zig=s,struct,Structure
+--kinddef-zig=e,enum,Enumerator
+--kinddef-zig=c,const,Global Constant
+--kinddef-zig=g,global,Global Variable
+# *technically* these need to be multi-line but eh
+--regex-zig=/\bfn\s+(.+)\b\s*\(/\1/f/
+# I don't need imported names in my tags file
+--regex-zig=/^const\s+(.+)\b\s*=\s*@(i|cI)mport\b///x{placeholder}
+--regex-zig=/^const\s+(.+)\b\s*=\s*struct\b/\1/s/x
+--regex-zig=/^const\s+(.+)\b\s*=\s*enum\b/\1/e/x
+--regex-zig=/^const\s+(.+)\b\s*=/\1/c/
+--regex-zig=/^var\s+(.+)\b\s*=/\1/g/

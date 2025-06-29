@@ -1,10 +1,16 @@
 --langdef=odin
 --map-odin=+.odin
 --kinddef-odin=p,proc,Procedure
+--kinddef-odin=G,procgrp,Procedure Group
 --kinddef-odin=s,struct,Structure
---kinddef-odin=g,global,Global Variable
+--kinddef-odin=e,enum,Enumerator
 --kinddef-odin=c,const,Global Constant
---regex-odin=/^\s*(\S+)\s*:\s*:\s*struct\b/\1/s/
---regex-odin=/^\s*(\S+)\s*:\s*:\s*proc\b/\1/p/
---regex-odin=/^(\S+)\s*:\s*:\s*\b[^sp]/\1/c/
+--kinddef-odin=g,global,Global Variable
+--kinddef-odin=P,package,Package
+--regex-odin=/^\s*(\S+)\s*:\s*:\s*(#\S+\s+)*proc\b\s*\(/\1/p/x
+--regex-odin=/^\s*(\S+)\s*:\s*:\s*(#\S+\s+)*proc\b\s*\{/\1/G/x
+--regex-odin=/^\s*(\S+)\s*:\s*:\s*(#\S+\s+)*struct\b/\1/s/x
+--regex-odin=/^\s*(\S+)\s*:\s*:\s*(#\S+\s+)*enum\b/\1/e/x
+--regex-odin=/^(\S+)\s*:\s*:/\1/c/
 --regex-odin=/^(\S+)\s*:\s*=/\1/g/
+--regex-odin=/^\s*package\s+(\S+)\s*$/\1/P/

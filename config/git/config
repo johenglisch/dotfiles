@@ -11,6 +11,7 @@
     b = branch
     c = commit
     co = checkout
+    r = restore
     s = status -sb
     sw = switch
     r = restore
